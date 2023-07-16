@@ -16,6 +16,7 @@ class AuthController {
     this.router.post(`${this.path}/register`, this.register)
     this.router.post(`${this.path}/login`, this.login)
     this.router.get(`${this.path}/refresh`, this.refresh)
+    this.router.post(`${this.path}/logout`, this.logout)
   }
 
   register = async (req, res, next) => {
@@ -127,6 +128,13 @@ class AuthController {
         res.json({ accessToken })
       }
     )
+  }
+
+  logout = (req, res) => {
+    const cookies = req.cookies
+    if (!cookies?.jwt) return res.sendStatus(204)
+    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true })
+    res.json({ message: 'Cookie cleared' })
   }
 }
 

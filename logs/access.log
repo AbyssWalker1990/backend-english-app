@@ -29,3 +29,7 @@
 16-07-2023  08:55:18 GET /auth/refresh 401 6.076 ms PostmanRuntime/7.32.3
 16-07-2023  08:55:36 GET /auth/refresh 401 5.709 ms PostmanRuntime/7.32.3
 16-07-2023  08:58:00 GET /auth/refresh 200 68.962 ms PostmanRuntime/7.32.3
+16-07-2023  09:23:47 POST /auth/login 200 156.356 ms PostmanRuntime/7.32.3
+16-07-2023  09:24:00 GET /auth/refresh 200 20.208 ms PostmanRuntime/7.32.3
+16-07-2023  09:24:03 POST /auth/logout 200 0.992 ms PostmanRuntime/7.32.3
+16-07-2023  09:24:09 POST /auth/logout 204 1.026 ms PostmanRuntime/7.32.3
