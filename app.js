@@ -3,6 +3,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const { logToConsoleAndFile, logFormat } = require('./config/morganOptions')
 const cookieParser = require('cookie-parser')
+const corsOptions = require('./config/corsOptions')
 
 class App {
   constructor (controllers, port) {
@@ -14,7 +15,7 @@ class App {
 
   initMiddlewares () {
     this.app.use(morgan(logFormat, { stream: { write: logToConsoleAndFile } }))
-    this.app.use(cors())
+    this.app.use(cors(corsOptions))
     this.app.use(cookieParser())
     this.app.use(express.urlencoded({ extended: false }))
     this.app.use(express.json())

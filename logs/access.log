@@ -72,3 +72,15 @@ Too many requests: Too many login attempts, please try again after 60 seconds	PO
 16-07-2023  11:57:48 POST /auth/login 200 135.613 ms PostmanRuntime/7.32.3
 16-07-2023  11:58:05 POST /auth/login 200 79.931 ms PostmanRuntime/7.32.3
 16-07-2023  11:58:44 GET /test 200 7.782 ms PostmanRuntime/7.32.3
+16-07-2023  13:38:56 POST /auth/login 200 124.779 ms PostmanRuntime/7.32.3
+16-07-2023  13:39:43 OPTIONS /auth/login 204 1.055 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  13:39:54 OPTIONS /auth/login 204 0.551 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  13:40:04 OPTIONS /auth/login 204 0.539 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  13:42:00 OPTIONS /auth/register 204 0.300 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  13:54:42 OPTIONS /auth/login 204 0.669 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  13:57:56 OPTIONS /auth/login 204 2.405 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  13:58:42 POST /auth/login 200 151.386 ms PostmanRuntime/7.32.3
+16-07-2023  13:58:58 OPTIONS /auth/login 204 1.324 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  14:03:26 OPTIONS /auth/login 204 3.832 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  14:04:56 OPTIONS /auth/login 200 3.462 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  14:04:56 POST /auth/login 200 119.029 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36

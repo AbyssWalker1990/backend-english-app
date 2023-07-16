@@ -51,6 +51,8 @@ class AuthController {
 
   login = async (req, res, next) => {
     const { username, password } = req.body
+    console.log('username: ', username)
+    console.log('password: ', password)
 
     if (!username || !password) {
       return res.status(400).json({ message: 'All fields are required' })
