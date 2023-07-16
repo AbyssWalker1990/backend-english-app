@@ -54,3 +54,21 @@ Too many requests: Too many login attempts, please try again after 60 seconds	PO
 16-07-2023  10:56:15 GET /auth/refresh 200 13.996 ms PostmanRuntime/7.32.3
 16-07-2023  10:56:17 POST /auth/logout 200 1.146 ms PostmanRuntime/7.32.3
 16-07-2023  10:56:19 POST /auth/logout 204 1.247 ms PostmanRuntime/7.32.3
+16-07-2023  11:00:41 OPTIONS /auth/login 204 0.668 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  11:00:41 POST /auth/login 200 86.119 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  11:06:58 OPTIONS /auth/login 204 0.269 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  11:06:58 POST /auth/login 200 112.608 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  11:17:16 OPTIONS /auth/login 204 0.405 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  11:17:16 POST /auth/login 200 86.423 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  11:19:59 OPTIONS /auth/login 204 0.169 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  11:19:59 POST /auth/login 401 92.698 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  11:20:06 OPTIONS /auth/login 204 0.316 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  11:20:06 POST /auth/login 200 89.201 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  11:20:19 POST /auth/logout 204 1.285 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  11:51:59 GET /test 404 6.987 ms PostmanRuntime/7.32.3
+16-07-2023  11:56:32 GET /test 404 5.697 ms PostmanRuntime/7.32.3
+16-07-2023  11:56:58 GET /test 404 6.086 ms PostmanRuntime/7.32.3
+16-07-2023  11:57:11 GET /test 401 10.827 ms PostmanRuntime/7.32.3
+16-07-2023  11:57:48 POST /auth/login 200 135.613 ms PostmanRuntime/7.32.3
+16-07-2023  11:58:05 POST /auth/login 200 79.931 ms PostmanRuntime/7.32.3
+16-07-2023  11:58:44 GET /test 200 7.782 ms PostmanRuntime/7.32.3
