@@ -15,6 +15,7 @@ class AuthController {
   initRoutes () {
     this.router.post(`${this.path}/register`, this.register)
     this.router.post(`${this.path}/login`, this.login)
+    this.router.get(`${this.path}/refresh`, this.refresh)
   }
 
   register = async (req, res, next) => {
@@ -91,6 +92,41 @@ class AuthController {
 
     // Send accessToken containing username and roles
     res.json({ accessToken })
+  }
+
+  refresh = async (req, res) => {
+    const cookies = req.cookies
+    console.log('COOKIES: ', cookies)
+    // console.log(req.headers)
+
+    if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized' })
+
+    const refreshToken = cookies.jwt
+
+    jwt.verify(
+      refreshToken,
+      process.env.REFRESH_TOKEN_SECRET,
+      async (err, decoded) => {
+        if (err) return res.status(403).json({ message: 'Forbidden' })
+
+        const foundUser = await User.findOne({ username: decoded.username }).exec()
+
+        if (!foundUser) return res.status(401).json({ message: 'Unauthorized' })
+
+        const accessToken = jwt.sign(
+          {
+            UserInfo: {
+              username: foundUser.username,
+              roles: foundUser.roles
+            }
+          },
+          process.env.ACCESS_TOKEN_SECRET,
+          { expiresIn: '15m' }
+        )
+
+        res.json({ accessToken })
+      }
+    )
   }
 }
 
