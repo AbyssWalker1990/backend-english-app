@@ -14,7 +14,7 @@ class AuthController {
 
   initRoutes () {
     this.router.post(`${this.path}/register`, this.register)
-    this.router.post(`${this.path}/login`, this.login)
+    this.router.post(`${this.path}/login`, loginLimiter, this.login)
     this.router.get(`${this.path}/refresh`, this.refresh)
     this.router.post(`${this.path}/logout`, this.logout)
   }

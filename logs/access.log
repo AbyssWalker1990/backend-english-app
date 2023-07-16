@@ -33,3 +33,24 @@
 16-07-2023  09:24:00 GET /auth/refresh 200 20.208 ms PostmanRuntime/7.32.3
 16-07-2023  09:24:03 POST /auth/logout 200 0.992 ms PostmanRuntime/7.32.3
 16-07-2023  09:24:09 POST /auth/logout 204 1.026 ms PostmanRuntime/7.32.3
+16-07-2023  09:25:41 POST /auth/login 200 113.306 ms PostmanRuntime/7.32.3
+16-07-2023  09:25:44 POST /auth/login 200 86.819 ms PostmanRuntime/7.32.3
+16-07-2023  09:25:45 POST /auth/login 200 81.517 ms PostmanRuntime/7.32.3
+16-07-2023  09:25:45 POST /auth/login 200 75.930 ms PostmanRuntime/7.32.3
+16-07-2023  09:25:46 POST /auth/login 200 75.322 ms PostmanRuntime/7.32.3
+Too many requests: Too many login attempts, please try again after 60 seconds	POST	/auth/login	undefined16-07-2023  09:25:47 POST /auth/login 429 2.195 ms PostmanRuntime/7.32.3
+Too many requests: Too many login attempts, please try again after 60 seconds	POST	/auth/login	undefined16-07-2023  09:25:49 POST /auth/login 429 1.154 ms PostmanRuntime/7.32.3
+16-07-2023  10:33:20 OPTIONS /auth/login 204 1.541 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  10:33:21 POST /auth/login 200 115.855 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  10:47:43 OPTIONS /auth/register 204 0.566 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  10:47:43 POST /auth/register 409 5.679 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  10:49:29 OPTIONS /auth/register 204 0.204 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  10:49:29 POST /auth/register 409 9.549 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  10:55:01 OPTIONS /auth/register 204 0.334 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  10:55:01 POST /auth/register 409 10.061 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  10:55:11 OPTIONS /auth/register 204 0.319 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  10:55:12 POST /auth/register 201 158.468 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+16-07-2023  10:56:11 POST /auth/login 200 145.272 ms PostmanRuntime/7.32.3
+16-07-2023  10:56:15 GET /auth/refresh 200 13.996 ms PostmanRuntime/7.32.3
+16-07-2023  10:56:17 POST /auth/logout 200 1.146 ms PostmanRuntime/7.32.3
+16-07-2023  10:56:19 POST /auth/logout 204 1.247 ms PostmanRuntime/7.32.3
