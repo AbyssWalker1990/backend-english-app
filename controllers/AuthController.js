@@ -21,7 +21,7 @@ class AuthController {
 
   register = async (req, res, next) => {
     const { username, password, roles } = req.body
-
+    const currentRoles = roles ?? ['User']
     // Confirm data
     if (!username || !password || !Array.isArray(roles) || !roles.length) {
       return res.status(400).json({ message: 'All fields are required' })
@@ -37,7 +37,7 @@ class AuthController {
     // Hash password
     const hashedPwd = await bcrypt.hash(password, 10) // salt rounds
 
-    const userObject = { username, password: hashedPwd, roles }
+    const userObject = { username, password: hashedPwd, roles: currentRoles }
 
     // Create and store new user
     const user = await User.create(userObject)
