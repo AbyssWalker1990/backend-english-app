@@ -453,3 +453,7 @@ Too many requests: Too many login attempts, please try again after 60 seconds	PO
 21-07-2023  10:27:39 POST /courses 201 97.273 ms PostmanRuntime/7.32.3
 21-07-2023  10:28:02 POST /courses 201 39.872 ms PostmanRuntime/7.32.3
 21-07-2023  10:32:51 GET /courses 200 67.702 ms PostmanRuntime/7.32.3
+21-07-2023  10:42:51 GET /courses 200 30.827 ms PostmanRuntime/7.32.3
+21-07-2023  10:43:23 GET /courses/64ba5d9a9b443eb6fc2dfbfa 200 10.177 ms PostmanRuntime/7.32.3
+21-07-2023  10:43:40 GET /courses 200 24.490 ms PostmanRuntime/7.32.3
+21-07-2023  10:44:00 GET /courses/64ba5db29b443eb6fc2dfc0a 200 6.932 ms PostmanRuntime/7.32.3

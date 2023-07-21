@@ -1,5 +1,6 @@
 const express = require('express')
 const Course = require('../models/Course')
+const { nextFriday } = require('date-fns')
 
 class CourseController {
   path = '/courses'
@@ -12,6 +13,7 @@ class CourseController {
   initRoutes () {
     this.router.post(`${this.path}`, this.createCourse)
     this.router.get(`${this.path}`, this.getAllCourses)
+    this.router.get(`${this.path}/:courseId`, this.getCourseById)
   }
 
   createCourse = async (req, res, next) => {
@@ -39,7 +41,19 @@ class CourseController {
       const courses = await Course.find()
       res.status(200).json({ courses })
     } catch (error) {
+      console.log(error)
+      next(error)
+    }
+  }
 
+  getCourseById = async (req, res, next) => {
+    const courseId = req.params.courseId
+    try {
+      const course = await Course.findById(courseId)
+      res.status(200).json({ course })
+    } catch (error) {
+      console.log(error)
+      next(error)
     }
   }
 }
