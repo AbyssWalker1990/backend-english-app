@@ -457,3 +457,13 @@ Too many requests: Too many login attempts, please try again after 60 seconds	PO
 21-07-2023  10:43:23 GET /courses/64ba5d9a9b443eb6fc2dfbfa 200 10.177 ms PostmanRuntime/7.32.3
 21-07-2023  10:43:40 GET /courses 200 24.490 ms PostmanRuntime/7.32.3
 21-07-2023  10:44:00 GET /courses/64ba5db29b443eb6fc2dfc0a 200 6.932 ms PostmanRuntime/7.32.3
+21-07-2023  11:12:43 DELETE /courses/64ba5db29b443eb6fc2dfc0a 204 31.824 ms PostmanRuntime/7.32.3
+21-07-2023  11:12:51 GET /courses 200 15.463 ms PostmanRuntime/7.32.3
+21-07-2023  11:13:02 DELETE /courses/64ba5d9a9b443eb6fc2dfbfa 204 5.952 ms PostmanRuntime/7.32.3
+21-07-2023  11:13:06 GET /courses 200 8.945 ms PostmanRuntime/7.32.3
+21-07-2023  11:13:40 GET /courses/64ba5db29b443eb6fc2dfc0a 200 40.575 ms PostmanRuntime/7.32.3
+21-07-2023  11:13:46 DELETE /courses/64ba5db29b443eb6fc2dfc0a 200 9.513 ms PostmanRuntime/7.32.3
+21-07-2023  11:13:52 GET /courses/64ba5db29b443eb6fc2dfc0a 200 7.434 ms PostmanRuntime/7.32.3
+21-07-2023  11:14:02 GET /courses 200 14.997 ms PostmanRuntime/7.32.3
+21-07-2023  11:14:45 POST /courses 400 40.371 ms PostmanRuntime/7.32.3
+21-07-2023  11:14:53 POST /courses 201 54.194 ms PostmanRuntime/7.32.3

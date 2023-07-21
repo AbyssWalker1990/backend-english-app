@@ -1,6 +1,5 @@
 const express = require('express')
 const Course = require('../models/Course')
-const { nextFriday } = require('date-fns')
 
 class CourseController {
   path = '/courses'
@@ -14,6 +13,7 @@ class CourseController {
     this.router.post(`${this.path}`, this.createCourse)
     this.router.get(`${this.path}`, this.getAllCourses)
     this.router.get(`${this.path}/:courseId`, this.getCourseById)
+    this.router.delete(`${this.path}/:courseId`, this.deleteCourseById)
   }
 
   createCourse = async (req, res, next) => {
@@ -29,7 +29,7 @@ class CourseController {
         lessons: [...lessons]
       })
       // console.log(newCourse)
-      res.status(201).json({ success: `New Training ${newCourse.title} created!!!` })
+      res.status(201).json({ success: `New Course ${newCourse.title} created!!!` })
     } catch (error) {
       console.log(error)
       next(error)
@@ -51,6 +51,17 @@ class CourseController {
     try {
       const course = await Course.findById(courseId)
       res.status(200).json({ course })
+    } catch (error) {
+      console.log(error)
+      next(error)
+    }
+  }
+
+  deleteCourseById = async (req, res, next) => {
+    const courseId = req.params.courseId
+    try {
+      const deletedCourse = await Course.findByIdAndDelete(courseId)
+      res.status(200).json({ deleted: deletedCourse.title })
     } catch (error) {
       console.log(error)
       next(error)
