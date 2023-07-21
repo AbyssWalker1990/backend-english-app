@@ -11,6 +11,7 @@ class CourseController {
 
   initRoutes () {
     this.router.post(`${this.path}`, this.createCourse)
+    this.router.get(`${this.path}`, this.getAllCourses)
   }
 
   createCourse = async (req, res, next) => {
@@ -19,7 +20,6 @@ class CourseController {
     lessons.forEach(element => {
       console.log(element.lessonExercises)
     })
-
     try {
       const newCourse = await Course.create({
         title,
@@ -31,6 +31,15 @@ class CourseController {
     } catch (error) {
       console.log(error)
       next(error)
+    }
+  }
+
+  getAllCourses = async (req, res, next) => {
+    try {
+      const courses = await Course.find()
+      res.status(200).json({ courses })
+    } catch (error) {
+
     }
   }
 }

@@ -3,8 +3,7 @@ const mongoose = require('mongoose')
 const exercisesSchema = new mongoose.Schema({
   exercisePos: {
     type: Number,
-    required: true,
-    unique: true
+    required: true
   },
   exerciseType: {
     type: String,
