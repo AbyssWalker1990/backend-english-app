@@ -12,8 +12,10 @@ class CourseController {
   initRoutes () {
     this.router.post(`${this.path}`, this.createCourse)
     this.router.get(`${this.path}`, this.getAllCourses)
+    this.router.get(`${this.path}/test`, this.getTest)
     this.router.get(`${this.path}/:courseId`, this.getCourseById)
     this.router.delete(`${this.path}/:courseId`, this.deleteCourseById)
+    this.router.patch(`${this.path}/:courseId`, this.updateCourseById)
   }
 
   createCourse = async (req, res, next) => {
@@ -58,6 +60,38 @@ class CourseController {
   }
 
   deleteCourseById = async (req, res, next) => {
+    const courseId = req.params.courseId
+    try {
+      const deletedCourse = await Course.findByIdAndDelete(courseId)
+      res.status(200).json({ deleted: deletedCourse.title })
+    } catch (error) {
+      console.log(error)
+      next(error)
+    }
+  }
+
+  updateCourseById = async (req, res, next) => {
+    const courseId = req.params.courseId
+    const updatedData = req.body
+    console.log('updatedData: ', updatedData)
+    try {
+      let course = await Course.findById(courseId).exec()
+      course = {
+        title: course.title,
+        description: course.description,
+        lessons: course.lessons,
+        ...updatedData
+      }
+      console.log(course)
+      await Course.findByIdAndUpdate(courseId, course)
+      res.status(200).json({ updated: course.title })
+    } catch (error) {
+      console.log(error)
+      next(error)
+    }
+  }
+
+  getTest = async (req, res, next) => {
     const courseId = req.params.courseId
     try {
       const deletedCourse = await Course.findByIdAndDelete(courseId)
