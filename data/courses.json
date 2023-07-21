@@ -5,11 +5,12 @@
     "lessons": [
       {
         "lessonTitle": "First Lesson Animal Farm",
+        "lessonPosition": 1,
         "lessonDescription": "At one end of the big barn, on a sort of raised platform, Major was already ensconced on his bed of straw, under a lantern which hung from a beam. He was twelve years old and had lately grown rather stout, but he was still a majestic-looking pig, with a wise and benevolent appearance in spite of the fact that his tushes had never been cut.",
         "lessonExercises": [
           {
-            "exercizePos": 1,
-            "exercizeType": "quiz",
+            "exercisePos": 1,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for first exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -20,8 +21,8 @@
             "correctAnswer": "Answer 3"
           },
           {
-            "exercizePos": 2,
-            "exercizeType": "quiz",
+            "exercisePos": 2,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for second exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -32,8 +33,8 @@
             "correctAnswer": "Answer 1"
           },
           {
-            "exercizePos": 1,
-            "exercizeType": "quiz",
+            "exercisePos": 1,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for third exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -47,11 +48,12 @@
       },
       {
         "lessonTitle": "Second Lesson Animal Farm",
+        "lessonPosition": 2,
         "lessonDescription": "The two horses had just lain down when a brood of ducklings, which had lost their mother, filed into the barn, cheeping feebly and wandering from side to side to find some place where they would not be trodden on. Clover made a sort of wall round them with her great foreleg, and the ducklings nestled down inside it and promptly fell asleep. At the last moment Mollie, the foolish, pretty white mare who drew Mr. Jones's trap, came mincing daintily in, chewing at a lump of sugar. She took a place near the front and began flirting her white mane, hoping to draw attention to the red ribbons it was plaited with. Last of all came the cat, who looked round, as usual, for the warmest place, and finally squeezed herself in between Boxer and Clover; there she purred contentedly throughout Major's speech without listening to a word of what he was saying.",
         "lessonExercises": [
           {
-            "exercizePos": 1,
-            "exercizeType": "quiz",
+            "exercisePos": 1,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for first exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -62,8 +64,8 @@
             "correctAnswer": "Answer 3"
           },
           {
-            "exercizePos": 2,
-            "exercizeType": "quiz",
+            "exercisePos": 2,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for second exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -74,8 +76,8 @@
             "correctAnswer": "Answer 1"
           },
           {
-            "exercizePos": 3,
-            "exercizeType": "quiz",
+            "exercisePos": 3,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for third exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -86,8 +88,8 @@
             "correctAnswer": "Answer 2"
           },
           {
-            "exercizePos": 4,
-            "exercizeType": "quiz",
+            "exercisePos": 4,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for third exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -101,11 +103,12 @@
       },
       {
         "lessonTitle": "Third Lesson Animal Farm",
+        "lessonPosition": 3,
         "lessonDescription": "But is this simply part of the order of nature? Is it because this land of ours is so poor that it cannot afford a decent life to those who dwell upon it? No, comrades, a thousand times no! The soil of England is fertile, its climate is good, it is capable of affording food in abundance to an enormously greater number of animals than now inhabit it. This single farm of ours would support a dozen horses, twenty cows, hundreds of sheep—and all of them living in a comfort and a dignity that are now almost beyond our imagining. Why then do we continue in this miserable condition? Because nearly the whole of the produce of our labour is stolen from us by human beings. There, comrades, is the answer to all our problems. It is summed up in a single word—Man. Man is the only real enemy we have. Remove Man from the scene, and the root cause of hunger and overwork is abolished for ever.",
         "lessonExercises": [
           {
-            "exercizePos": 1,
-            "exercizeType": "quiz",
+            "exercisePos": 1,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for first exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -116,8 +119,8 @@
             "correctAnswer": "Answer 3"
           },
           {
-            "exercizePos": 2,
-            "exercizeType": "quiz",
+            "exercisePos": 2,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for second exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -128,8 +131,8 @@
             "correctAnswer": "Answer 1"
           },
           {
-            "exercizePos": 3,
-            "exercizeType": "quiz",
+            "exercisePos": 3,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for third exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -140,8 +143,8 @@
             "correctAnswer": "Answer 2"
           },
           {
-            "exercizePos": 4,
-            "exercizeType": "quiz",
+            "exercisePos": 4,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for third exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -161,11 +164,12 @@
     "lessons": [
       {
         "lessonTitle": "First Lesson 1984",
+        "lessonPosition": 1,
         "lessonDescription": "Inside the flat a fruity voice was reading out a list of figures which had something to do with the production of pig-iron. The voice came from an oblong metal plaque like a dulled mirror which formed part of the surface of the right-hand wall. Winston turned a switch and the voice sank somewhat, though the words were still distinguishable. The instrument (the telescreen, it was called) could be dimmed, but there was no way of shutting it off completely. He moved over to the window: a smallish, frail figure, the meagreness of his body merely emphasized by the blue overalls which were the uniform of the party.",
         "lessonExercises": [
           {
-            "exercizePos": 1,
-            "exercizeType": "quiz",
+            "exercisePos": 1,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for first exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -176,8 +180,8 @@
             "correctAnswer": "Answer 3"
           },
           {
-            "exercizePos": 2,
-            "exercizeType": "quiz",
+            "exercisePos": 2,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for second exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -188,8 +192,8 @@
             "correctAnswer": "Answer 1"
           },
           {
-            "exercizePos": 1,
-            "exercizeType": "quiz",
+            "exercisePos": 1,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for third exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -203,11 +207,12 @@
       },
       {
         "lessonTitle": "Second Lesson 1984",
+        "lessonPosition": 2,
         "lessonDescription": "BIG BROTHER IS WATCHING YOU, the caption said, while the dark eyes looked deep into Winston's own. Down at streetlevel another poster, torn at one corner, flapped fitfully in the wind, alternately covering and uncovering the single word INGSOC. In the far distance a helicopter skimmed down between the roofs, hovered for an instant like a bluebottle, and darted away again with a curving flight. It was the police patrol, snooping into people's windows. The patrols did not matter, however. Only the Thought Police mattered.",
         "lessonExercises": [
           {
-            "exercizePos": 1,
-            "exercizeType": "quiz",
+            "exercisePos": 1,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for first exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -218,8 +223,8 @@
             "correctAnswer": "Answer 3"
           },
           {
-            "exercizePos": 2,
-            "exercizeType": "quiz",
+            "exercisePos": 2,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for second exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -230,8 +235,8 @@
             "correctAnswer": "Answer 1"
           },
           {
-            "exercizePos": 3,
-            "exercizeType": "quiz",
+            "exercisePos": 3,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for third exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -242,8 +247,8 @@
             "correctAnswer": "Answer 2"
           },
           {
-            "exercizePos": 4,
-            "exercizeType": "quiz",
+            "exercisePos": 4,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for third exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -257,11 +262,12 @@
       },
       {
         "lessonTitle": "Third Lesson 1984",
+        "lessonPosition": 3,
         "lessonDescription": "Winston kept his back turned to the telescreen. It was safer, though, as he well knew, even a back can be revealing. A kilometre away the Ministry of Truth, his place of work, towered vast and white above the grimy landscape. This, he thought with a sort of vague distaste -- this was London, chief city of Airstrip One, itself the third most populous of the provinces of Oceania. He tried to squeeze out some childhood memory that should tell him whether London had always been quite like this. ",
         "lessonExercises": [
           {
-            "exercizePos": 1,
-            "exercizeType": "quiz",
+            "exercisePos": 1,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for first exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -272,8 +278,8 @@
             "correctAnswer": "Answer 3"
           },
           {
-            "exercizePos": 2,
-            "exercizeType": "quiz",
+            "exercisePos": 2,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for second exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -284,8 +290,8 @@
             "correctAnswer": "Answer 1"
           },
           {
-            "exercizePos": 3,
-            "exercizeType": "quiz",
+            "exercisePos": 3,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for third exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
@@ -296,8 +302,8 @@
             "correctAnswer": "Answer 2"
           },
           {
-            "exercizePos": 4,
-            "exercizeType": "quiz",
+            "exercisePos": 4,
+            "exerciseType": "quiz",
             "exerciseDescription": "Description for third exercise. There are too many words",
             "exerciseQuizAnswers": [
               "Answer 1",
