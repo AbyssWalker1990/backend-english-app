@@ -41,7 +41,7 @@ class CourseController {
   getAllCourses = async (req, res, next) => {
     try {
       const courses = await Course.find()
-      res.status(200).json({ courses })
+      res.status(200).json({ courses: [...courses] })
     } catch (error) {
       console.log(error)
       next(error)

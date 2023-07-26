@@ -7,42 +7,48 @@
         "lessonTitle": "First Lesson Animal Farm",
         "lessonPosition": 1,
         "lessonDescription": "At one end of the big barn, on a sort of raised platform, Major was already ensconced on his bed of straw, under a lantern which hung from a beam. He was twelve years old and had lately grown rather stout, but he was still a majestic-looking pig, with a wise and benevolent appearance in spite of the fact that his tushes had never been cut.",
-        "lessonExercises": [
+        "exercisesBlocks": [
           {
-            "exercisePos": 1,
-            "exerciseType": "quiz",
-            "exerciseDescription": "Description for first exercise. There are too many words",
-            "exerciseQuizAnswers": [
-              "Answer 1",
-              "Answer 2",
-              "Answer 3",
-              "Answer 4"
-            ],
-            "correctAnswer": "Answer 3"
-          },
-          {
-            "exercisePos": 2,
-            "exerciseType": "quiz",
-            "exerciseDescription": "Description for second exercise. There are too many words",
-            "exerciseQuizAnswers": [
-              "Answer 1",
-              "Answer 2",
-              "Answer 3",
-              "Answer 4"
-            ],
-            "correctAnswer": "Answer 1"
-          },
-          {
-            "exercisePos": 1,
-            "exerciseType": "quiz",
-            "exerciseDescription": "Description for third exercise. There are too many words",
-            "exerciseQuizAnswers": [
-              "Answer 1",
-              "Answer 2",
-              "Answer 3",
-              "Answer 4"
-            ],
-            "correctAnswer": "Answer 2"
+            "blockPosition": 1,
+            "blockDescription": "Block Description",
+            "blockExercises": [
+              {
+                "exercisePos": 1,
+                "exerciseType": "quiz",
+                "exerciseDescription": "Description for first exercise. There are too many words",
+                "exerciseQuizAnswers": [
+                  "Answer 1",
+                  "Answer 2",
+                  "Answer 3",
+                  "Answer 4"
+                ],
+                "correctAnswer": "Answer 3"
+              },
+              {
+                "exercisePos": 2,
+                "exerciseType": "quiz",
+                "exerciseDescription": "Description for second exercise. There are too many words",
+                "exerciseQuizAnswers": [
+                  "Answer 1",
+                  "Answer 2",
+                  "Answer 3",
+                  "Answer 4"
+                ],
+                "correctAnswer": "Answer 1"
+              },
+              {
+                "exercisePos": 1,
+                "exerciseType": "quiz",
+                "exerciseDescription": "Description for third exercise. There are too many words",
+                "exerciseQuizAnswers": [
+                  "Answer 1",
+                  "Answer 2",
+                  "Answer 3",
+                  "Answer 4"
+                ],
+                "correctAnswer": "Answer 2"
+              }
+            ]
           }
         ]
       },
@@ -50,54 +56,48 @@
         "lessonTitle": "Second Lesson Animal Farm",
         "lessonPosition": 2,
         "lessonDescription": "The two horses had just lain down when a brood of ducklings, which had lost their mother, filed into the barn, cheeping feebly and wandering from side to side to find some place where they would not be trodden on. Clover made a sort of wall round them with her great foreleg, and the ducklings nestled down inside it and promptly fell asleep. At the last moment Mollie, the foolish, pretty white mare who drew Mr. Jones's trap, came mincing daintily in, chewing at a lump of sugar. She took a place near the front and began flirting her white mane, hoping to draw attention to the red ribbons it was plaited with. Last of all came the cat, who looked round, as usual, for the warmest place, and finally squeezed herself in between Boxer and Clover; there she purred contentedly throughout Major's speech without listening to a word of what he was saying.",
-        "lessonExercises": [
+        "exercisesBlocks": [
           {
-            "exercisePos": 1,
-            "exerciseType": "quiz",
-            "exerciseDescription": "Description for first exercise. There are too many words",
-            "exerciseQuizAnswers": [
-              "Answer 1",
-              "Answer 2",
-              "Answer 3",
-              "Answer 4"
-            ],
-            "correctAnswer": "Answer 3"
-          },
-          {
-            "exercisePos": 2,
-            "exerciseType": "quiz",
-            "exerciseDescription": "Description for second exercise. There are too many words",
-            "exerciseQuizAnswers": [
-              "Answer 1",
-              "Answer 2",
-              "Answer 3",
-              "Answer 4"
-            ],
-            "correctAnswer": "Answer 1"
-          },
-          {
-            "exercisePos": 3,
-            "exerciseType": "quiz",
-            "exerciseDescription": "Description for third exercise. There are too many words",
-            "exerciseQuizAnswers": [
-              "Answer 1",
-              "Answer 2",
-              "Answer 3",
-              "Answer 4"
-            ],
-            "correctAnswer": "Answer 2"
-          },
-          {
-            "exercisePos": 4,
-            "exerciseType": "quiz",
-            "exerciseDescription": "Description for third exercise. There are too many words",
-            "exerciseQuizAnswers": [
-              "Answer 1",
-              "Answer 2",
-              "Answer 3",
-              "Answer 4"
-            ],
-            "correctAnswer": "Answer 2"
+            "blockPosition": 1,
+            "blockDescription": "Block Description",
+            "blockExercises": [
+              {
+                "exercisePos": 1,
+                "exerciseType": "quiz",
+                "exerciseDescription": "Description for first exercise. There are too many words",
+                "exerciseQuizAnswers": [
+                  "Answer 1",
+                  "Answer 2",
+                  "Answer 3",
+                  "Answer 4"
+                ],
+                "correctAnswer": "Answer 3"
+              },
+              {
+                "exercisePos": 2,
+                "exerciseType": "quiz",
+                "exerciseDescription": "Description for second exercise. There are too many words",
+                "exerciseQuizAnswers": [
+                  "Answer 1",
+                  "Answer 2",
+                  "Answer 3",
+                  "Answer 4"
+                ],
+                "correctAnswer": "Answer 1"
+              },
+              {
+                "exercisePos": 1,
+                "exerciseType": "quiz",
+                "exerciseDescription": "Description for third exercise. There are too many words",
+                "exerciseQuizAnswers": [
+                  "Answer 1",
+                  "Answer 2",
+                  "Answer 3",
+                  "Answer 4"
+                ],
+                "correctAnswer": "Answer 2"
+              }
+            ]
           }
         ]
       },
@@ -105,54 +105,48 @@
         "lessonTitle": "Third Lesson Animal Farm",
         "lessonPosition": 3,
         "lessonDescription": "But is this simply part of the order of nature? Is it because this land of ours is so poor that it cannot afford a decent life to those who dwell upon it? No, comrades, a thousand times no! The soil of England is fertile, its climate is good, it is capable of affording food in abundance to an enormously greater number of animals than now inhabit it. This single farm of ours would support a dozen horses, twenty cows, hundreds of sheep—and all of them living in a comfort and a dignity that are now almost beyond our imagining. Why then do we continue in this miserable condition? Because nearly the whole of the produce of our labour is stolen from us by human beings. There, comrades, is the answer to all our problems. It is summed up in a single word—Man. Man is the only real enemy we have. Remove Man from the scene, and the root cause of hunger and overwork is abolished for ever.",
-        "lessonExercises": [
+        "exercisesBlocks": [
           {
-            "exercisePos": 1,
-            "exerciseType": "quiz",
-            "exerciseDescription": "Description for first exercise. There are too many words",
-            "exerciseQuizAnswers": [
-              "Answer 1",
-              "Answer 2",
-              "Answer 3",
-              "Answer 4"
-            ],
-            "correctAnswer": "Answer 3"
-          },
-          {
-            "exercisePos": 2,
-            "exerciseType": "quiz",
-            "exerciseDescription": "Description for second exercise. There are too many words",
-            "exerciseQuizAnswers": [
-              "Answer 1",
-              "Answer 2",
-              "Answer 3",
-              "Answer 4"
-            ],
-            "correctAnswer": "Answer 1"
-          },
-          {
-            "exercisePos": 3,
-            "exerciseType": "quiz",
-            "exerciseDescription": "Description for third exercise. There are too many words",
-            "exerciseQuizAnswers": [
-              "Answer 1",
-              "Answer 2",
-              "Answer 3",
-              "Answer 4"
-            ],
-            "correctAnswer": "Answer 2"
-          },
-          {
-            "exercisePos": 4,
-            "exerciseType": "quiz",
-            "exerciseDescription": "Description for third exercise. There are too many words",
-            "exerciseQuizAnswers": [
-              "Answer 1",
-              "Answer 2",
-              "Answer 3",
-              "Answer 4"
-            ],
-            "correctAnswer": "Answer 2"
+            "blockPosition": 1,
+            "blockDescription": "Block Description",
+            "blockExercises": [
+              {
+                "exercisePos": 1,
+                "exerciseType": "quiz",
+                "exerciseDescription": "Description for first exercise. There are too many words",
+                "exerciseQuizAnswers": [
+                  "Answer 1",
+                  "Answer 2",
+                  "Answer 3",
+                  "Answer 4"
+                ],
+                "correctAnswer": "Answer 3"
+              },
+              {
+                "exercisePos": 2,
+                "exerciseType": "quiz",
+                "exerciseDescription": "Description for second exercise. There are too many words",
+                "exerciseQuizAnswers": [
+                  "Answer 1",
+                  "Answer 2",
+                  "Answer 3",
+                  "Answer 4"
+                ],
+                "correctAnswer": "Answer 1"
+              },
+              {
+                "exercisePos": 1,
+                "exerciseType": "quiz",
+                "exerciseDescription": "Description for third exercise. There are too many words",
+                "exerciseQuizAnswers": [
+                  "Answer 1",
+                  "Answer 2",
+                  "Answer 3",
+                  "Answer 4"
+                ],
+                "correctAnswer": "Answer 2"
+              }
+            ]
           }
         ]
       }

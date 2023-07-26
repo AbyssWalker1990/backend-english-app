@@ -20,6 +20,18 @@ const exercisesSchema = new mongoose.Schema({
   }
 })
 
+const exercisesBlockSchema = new mongoose.Schema({
+  blockPosition: {
+    type: Number,
+    required: true
+  },
+  blockDescription: {
+    type: String,
+    required: true
+  },
+  blockExercises: [exercisesSchema]
+})
+
 const lessonSchema = new mongoose.Schema({
   lessonTitle: {
     type: String,
@@ -33,7 +45,7 @@ const lessonSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  lessonExercises: [exercisesSchema]
+  exercisesBlocks: [exercisesBlockSchema]
 })
 
 const courseSchema = new mongoose.Schema({
