@@ -37,7 +37,7 @@
                 "correctAnswer": "Answer 1"
               },
               {
-                "exercisePos": 1,
+                "exercisePos": 3,
                 "exerciseType": "quiz",
                 "exerciseDescription": "Description for third exercise. There are too many words",
                 "exerciseQuizAnswers": [
@@ -86,7 +86,7 @@
                 "correctAnswer": "Answer 1"
               },
               {
-                "exercisePos": 1,
+                "exercisePos": 3,
                 "exerciseType": "quiz",
                 "exerciseDescription": "Description for third exercise. There are too many words",
                 "exerciseQuizAnswers": [
@@ -135,7 +135,7 @@
                 "correctAnswer": "Answer 1"
               },
               {
-                "exercisePos": 1,
+                "exercisePos": 3,
                 "exerciseType": "quiz",
                 "exerciseDescription": "Description for third exercise. There are too many words",
                 "exerciseQuizAnswers": [
