@@ -20,6 +20,21 @@ const userSchema = new mongoose.Schema({
   active: {
     type: Boolean,
     default: true
+  },
+  profile: {
+    photo: {
+      type: String
+    },
+    courses: [String],
+    activeCourse: {
+      type: String
+    },
+    objectives: {
+      type: String
+    },
+    priorities: {
+      type: String
+    }
   }
 })
 

@@ -6,12 +6,14 @@ const { connectDatabase } = require('./config/connectDatabase')
 const AuthController = require('./controllers/AuthController')
 const TestController = require('./controllers/TestController')
 const CourseController = require('./controllers/CourseController')
+const ProfileController = require('./controllers/ProfileController')
 
 const PORT = process.env.PORT ?? 3501
 const app = new App([
   new AuthController(),
   new TestController(),
-  new CourseController()
+  new CourseController(),
+  new ProfileController()
 ], PORT)
 
 connectDatabase()
