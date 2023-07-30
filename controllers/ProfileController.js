@@ -14,10 +14,11 @@ class ProfileController {
   }
 
   initRoutes () {
-    this.router.post(`${this.path}`, verifyJWT, upload.single('imageInput'), this.createProfile)
+    this.router.post(`${this.path}/set-avatar`, verifyJWT, upload.single('imageInput'), this.setAvatar)
+    this.router.post(`${this.path}`, verifyJWT, this.setProfileDescription)
   }
 
-  createProfile = async (req, res) => {
+  setAvatar = async (req, res) => {
     const currentUser = await User.findOne({ username: req.user })
     // const { photo, objectives, priority } = req.body
     const image = req.file.originalname
@@ -25,6 +26,20 @@ class ProfileController {
     console.log('req: ', req.headers)
 
     res.status(200).json({ username: currentUser.username })
+  }
+
+  setProfileDescription = async (req, res) => {
+    const {
+      course,
+      objectives,
+      priorities,
+      hobbies
+    } = req.body.profileData
+    console.log(
+      course,
+      objectives,
+      priorities,
+      hobbies)
   }
 }
 

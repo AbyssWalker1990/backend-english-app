@@ -34,6 +34,9 @@ const userSchema = new mongoose.Schema({
     },
     priorities: {
       type: String
+    },
+    hobbies: {
+      type: String
     }
   }
 })
