@@ -24,26 +24,28 @@ class ProfileController {
   initRoutes () {
     this.router.post(`${this.path}/set-avatar`, verifyJWT, upload.single('imageInput'), this.setAvatar)
     this.router.post(`${this.path}`, verifyJWT, this.setProfileDescription)
+    this.router.get(`${this.path}`, verifyJWT, this.getProfile)
   }
 
   setAvatar = async (req, res) => {
     const currentUser = await User.findOne({ username: req.user })
 
-    const image = req.file.originalname
-    console.log('image: ', image)
-    console.log('buffer: ', req.file.buffer)
+    console.log(req.file)
+    const ext = req.file.mimetype.split('/')[1]
+    const name = req.file.originalname.split('.')[0]
+
+    const formattedName = `${name}-${new Date().getTime()}.${ext}`
+    const file = req.file.buffer
 
     const bucketParams = {
       Bucket: process.env.AWS_S3_BUCKET_NAME,
-      Key: req.file.originalname,
-      Body: req.file.buffer
+      Key: formattedName,
+      Body: file
     }
     try {
-      console.log('SENDING TO BUCKET')
-      console.log('AWS_S3_BUCKET_NAME: ', process.env.AWS_S3_BUCKET_NAME)
-      const data = await s3Client.send(new PutObjectCommand(bucketParams))
-      console.log(data)
-      // res.send(data)
+      await s3Client.send(new PutObjectCommand(bucketParams))
+      currentUser.profile.photo = `https://english-learn-app.s3.eu-central-1.amazonaws.com/${formattedName}`
+      await currentUser.save()
     } catch (err) {
       console.log('Error', err)
     }
@@ -52,8 +54,23 @@ class ProfileController {
   }
 
   setProfileDescription = async (req, res) => {
-    const { course, objectives, priorities, hobbies } = req.body.profileData
+    console.log(req.body)
+    const { course, objectives, priorities, hobbies } = req.body
+    const currentUser = await User.findOne({ username: req.user })
+    currentUser.profile.objectives = objectives
+    currentUser.profile.priorities = priorities
+    currentUser.profile.hobbies = hobbies
+    if (!currentUser.profile.courses.includes(course)) {
+      currentUser.profile.courses = [...currentUser.profile.courses, course]
+    }
+    await currentUser.save()
+    res.status(200).json({ message: 'Profile Updated' })
+  }
 
+  getProfile = async (req, res) => {
+    const currentUser = await User.findOne({ username: req.user })
+    const { photo, objectives, priorities, hobbies, courses } = currentUser.profile
+    res.status(200).json({ photo, objectives, priorities, hobbies, courses })
   }
 }
 
