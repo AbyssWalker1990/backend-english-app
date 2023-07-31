@@ -4720,3 +4720,5 @@ Too many requests: Too many login attempts, please try again after 60 seconds	PO
 31-07-2023  15:18:27 GET /courses 304 10.844 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 31-07-2023  15:18:35 OPTIONS /auth/logout 200 0.645 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 31-07-2023  15:18:35 POST /auth/logout 200 1.704 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+31-07-2023  16:09:36 POST /courses 400 22.489 ms PostmanRuntime/7.32.3
+31-07-2023  16:10:00 POST /courses 201 88.174 ms PostmanRuntime/7.32.3
