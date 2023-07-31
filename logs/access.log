@@ -4710,3 +4710,13 @@ Too many requests: Too many login attempts, please try again after 60 seconds	PO
 31-07-2023  14:35:50 GET /test 304 2.668 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 31-07-2023  14:38:18 OPTIONS /courses 200 0.411 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 31-07-2023  14:38:18 GET /courses 304 10.662 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+31-07-2023  15:16:25 GET /auth/refresh 200 15.254 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+31-07-2023  15:16:25 OPTIONS /courses 200 0.371 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+31-07-2023  15:16:25 GET /courses 304 7.059 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+31-07-2023  15:16:29 GET /auth/refresh 200 12.807 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+31-07-2023  15:17:48 GET /auth/refresh 200 32.628 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+31-07-2023  15:17:49 GET /auth/refresh 200 20.025 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+31-07-2023  15:18:27 OPTIONS /courses 200 0.747 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+31-07-2023  15:18:27 GET /courses 304 10.844 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+31-07-2023  15:18:35 OPTIONS /auth/logout 200 0.645 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+31-07-2023  15:18:35 POST /auth/logout 200 1.704 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
