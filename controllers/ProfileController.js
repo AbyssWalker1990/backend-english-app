@@ -60,6 +60,7 @@ class ProfileController {
     currentUser.profile.objectives = objectives
     currentUser.profile.priorities = priorities
     currentUser.profile.hobbies = hobbies
+    currentUser.profile.activeCourse = course
     if (!currentUser.profile.courses.includes(course)) {
       currentUser.profile.courses = [...currentUser.profile.courses, course]
     }
