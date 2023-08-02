@@ -1,6 +1,7 @@
 const dotenv = require('dotenv')
 const express = require('express')
 const User = require('../models/User')
+const Course = require('../models/Course')
 const verifyJWT = require('../middleware/verifyJWT')
 const upload = require('../middleware/multer')
 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3')
@@ -24,6 +25,7 @@ class ProfileController {
   initRoutes () {
     this.router.post(`${this.path}/set-avatar`, verifyJWT, upload.single('imageInput'), this.setAvatar)
     this.router.post(`${this.path}`, verifyJWT, this.setProfileDescription)
+    this.router.patch(`${this.path}/answers`, verifyJWT, this.setAnswers)
     this.router.get(`${this.path}`, verifyJWT, this.getProfile)
   }
 
@@ -72,6 +74,38 @@ class ProfileController {
     const currentUser = await User.findOne({ username: req.user })
     const { photo, objectives, priorities, hobbies, courses, activeCourse, coursesAnswers } = currentUser.profile
     res.status(200).json({ photo, objectives, priorities, hobbies, courses, activeCourse, coursesAnswers })
+  }
+
+  setAnswers = async (req, res) => {
+    const currentUser = await User.findOne({ username: req.user })
+    const { courseId, lessonPosition, blockPosition, exerciseAnswers } = req.body
+    const currentCourse = await Course.findById(courseId).exec()
+    // console.log(currentCourse)
+    if (!currentUser.coursesAnswers) currentUser.coursesAnswers = []
+    console.log('currentUser.coursesAnswers: ', currentUser.coursesAnswers)
+
+    if (!currentUser.coursesAnswers.find(answer => answer.courseId === courseId)) {
+      const lessonData = currentCourse.lessons.map(lesson => {
+        return { lessonPosition }
+      })
+
+      lessonData.forEach(lesson => {
+        const curLesson = currentCourse.lessons.find(courseLesson => courseLesson.lessonPosition === lesson.lessonPosition)
+        lesson.exercisesBlocks = curLesson.exercisesBlocks.map(block => {
+          return {
+            blockPosition,
+            blockExercises: curLesson.exercisesBlocks[block.blockPosition - 1].blockExercises.map(exercise => ({ exercisePos: exercise.exercisePos }))
+          }
+        })
+      })
+
+      const courseAnswerData = {
+        courseId,
+        lessons: lessonData
+      }
+
+      console.log(JSON.stringify(courseAnswerData, 0, 2))
+    }
   }
 }
 

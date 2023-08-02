@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const coursesAnswersSchema = new mongoose.Schema({
+  courseId: {
+    type: String,
+    requred: true
+  },
   lessons: [{
     lessonPosition: {
       type: Number,
