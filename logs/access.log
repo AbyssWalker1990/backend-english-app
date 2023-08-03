@@ -5232,3 +5232,14 @@ Too many requests: Too many login attempts, please try again after 60 seconds	PO
 02-08-2023  15:29:35 OPTIONS /profile/answers 200 1.867 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 02-08-2023  15:31:00 OPTIONS /profile/answers 200 3.398 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 02-08-2023  15:36:01 OPTIONS /profile/answers 200 3.833 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-08-2023  13:51:20 GET /auth/refresh 200 160.411 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-08-2023  13:51:20 OPTIONS /courses 200 0.554 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-08-2023  13:51:20 OPTIONS /profile 200 0.257 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-08-2023  13:51:20 OPTIONS /courses 200 0.849 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-08-2023  13:51:20 GET /profile 304 11.086 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-08-2023  13:51:20 GET /courses 304 92.303 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-08-2023  13:51:20 GET /courses 304 16.110 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-08-2023  13:51:39 OPTIONS /profile/answers 200 0.361 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-08-2023  13:53:40 GET /courses 200 8.964 ms PostmanRuntime/7.32.3
+03-08-2023  13:55:13 OPTIONS /profile/answers 200 3.780 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-08-2023  13:56:26 OPTIONS /profile/answers 200 3.205 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36

@@ -86,14 +86,14 @@ class ProfileController {
 
     if (!currentUser.coursesAnswers.find(answer => answer.courseId === courseId)) {
       const lessonData = currentCourse.lessons.map(lesson => {
-        return { lessonPosition }
+        return { lessonPosition: lesson.lessonPosition }
       })
 
       lessonData.forEach(lesson => {
         const curLesson = currentCourse.lessons.find(courseLesson => courseLesson.lessonPosition === lesson.lessonPosition)
         lesson.exercisesBlocks = curLesson.exercisesBlocks.map(block => {
           return {
-            blockPosition,
+            blockPosition: block.blockPosition,
             blockExercises: curLesson.exercisesBlocks[block.blockPosition - 1].blockExercises.map(exercise => ({ exercisePos: exercise.exercisePos }))
           }
         })
