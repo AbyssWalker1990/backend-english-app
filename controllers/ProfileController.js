@@ -80,15 +80,17 @@ class ProfileController {
     const currentUser = await User.findOne({ username: req.user })
     const { courseId, lessonPosition, blockPosition, exerciseAnswers } = req.body
     const currentCourse = await Course.findById(courseId).exec()
-    // console.log(currentCourse)
-    if (!currentUser.coursesAnswers) currentUser.coursesAnswers = []
+
+    if (!currentUser.coursesAnswers) {
+      currentUser.coursesAnswers = []
+      currentUser.save()
+    }
     console.log('currentUser.coursesAnswers: ', currentUser.coursesAnswers)
 
-    if (!currentUser.coursesAnswers.find(answer => answer.courseId === courseId)) {
+    if (currentUser.profile.coursesAnswers.find(answer => answer.courseId === courseId) === undefined) {
       const lessonData = currentCourse.lessons.map(lesson => {
         return { lessonPosition: lesson.lessonPosition }
       })
-
       lessonData.forEach(lesson => {
         const curLesson = currentCourse.lessons.find(courseLesson => courseLesson.lessonPosition === lesson.lessonPosition)
         lesson.exercisesBlocks = curLesson.exercisesBlocks.map(block => {
@@ -105,6 +107,29 @@ class ProfileController {
       }
 
       console.log(JSON.stringify(courseAnswerData, 0, 2))
+      try {
+        const currentUser2 = await User.findOne({ username: req.user })
+        currentUser2.profile.coursesAnswers = [...currentUser.coursesAnswers, courseAnswerData]
+        console.log('currentUser2: ', currentUser2.profile.coursesAnswers)
+        await currentUser2.save()
+      } catch (error) {
+        console.log('Error from generated: ', error)
+      }
+    }
+
+    console.log('do nothing')
+
+    try {
+      const currentUser3 = await User.findOne({ username: req.user })
+      console.log(exerciseAnswers)
+      console.log(Array.isArray(exerciseAnswers))
+      currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
+        .lessons.find(lesson => lesson.lessonPosition === lessonPosition)
+        .exercisesBlocks.find(block => block.blockPosition === blockPosition).blockExercises = exerciseAnswers
+      console.log(JSON.stringify(currentUser3, 0, 2))
+      await currentUser3.save()
+    } catch (error) {
+      console.log('Error from received data: ', error)
     }
   }
 }

@@ -23,9 +23,7 @@ const coursesAnswersSchema = new mongoose.Schema({
               required: true
             },
             studentsAnswer: {
-              exerciseType: {
-                type: String
-              }
+              type: String
             }
           }
         ]
