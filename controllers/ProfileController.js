@@ -85,7 +85,7 @@ class ProfileController {
       currentUser.coursesAnswers = []
       currentUser.save()
     }
-    console.log('currentUser.coursesAnswers: ', currentUser.coursesAnswers)
+    // console.log('currentUser.coursesAnswers: ', currentUser.coursesAnswers)
 
     if (currentUser.profile.coursesAnswers.find(answer => answer.courseId === courseId) === undefined) {
       const lessonData = currentCourse.lessons.map(lesson => {
@@ -126,7 +126,7 @@ class ProfileController {
       currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
         .lessons.find(lesson => lesson.lessonPosition === lessonPosition)
         .exercisesBlocks.find(block => block.blockPosition === blockPosition).blockExercises = exerciseAnswers
-      console.log(JSON.stringify(currentUser3, 0, 2))
+      // console.log(JSON.stringify(currentUser3, 0, 2))
       await currentUser3.save()
     } catch (error) {
       console.log('Error from received data: ', error)
