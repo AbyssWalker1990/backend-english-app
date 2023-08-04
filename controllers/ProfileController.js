@@ -25,6 +25,7 @@ class ProfileController {
   initRoutes () {
     this.router.post(`${this.path}/set-avatar`, verifyJWT, upload.single('imageInput'), this.setAvatar)
     this.router.post(`${this.path}`, verifyJWT, this.setProfileDescription)
+    this.router.post(`${this.path}/init-answers`, verifyJWT, this.setInitAnswers)
     this.router.patch(`${this.path}/answers`, verifyJWT, this.setAnswers)
     this.router.get(`${this.path}`, verifyJWT, this.getProfile)
   }
@@ -57,8 +58,10 @@ class ProfileController {
 
   setProfileDescription = async (req, res) => {
     console.log(req.body)
+    console.log(req.user)
     const { course, objectives, priorities, hobbies } = req.body
     const currentUser = await User.findOne({ username: req.user })
+    const currentCourse = await Course.findOne({ title: course })
     currentUser.profile.objectives = objectives
     currentUser.profile.priorities = priorities
     currentUser.profile.hobbies = hobbies
@@ -67,6 +70,9 @@ class ProfileController {
       currentUser.profile.courses = [...currentUser.profile.courses, course]
     }
     await currentUser.save()
+    if (!currentUser.profile.coursesAnswers.find(answer => answer.courseId === currentCourse._id)) {
+      await this.setInitAnswers(currentCourse._id.toString(), req.user)
+    }
     res.status(200).json({ message: 'Profile Updated' })
   }
 
@@ -77,10 +83,37 @@ class ProfileController {
   }
 
   setAnswers = async (req, res) => {
-    const currentUser = await User.findOne({ username: req.user })
     const { courseId, lessonPosition, blockPosition, exerciseAnswers } = req.body
-    const currentCourse = await Course.findById(courseId).exec()
+    const currentUser = await User.findOne({ username: req.user })
 
+    if (currentUser.profile.coursesAnswers.find(answer => answer.courseId === courseId) === undefined) {
+      await this.setInitAnswers(courseId, req.username)
+    }
+
+    console.log('do nothing')
+
+    try {
+      const currentUser3 = await User.findOne({ username: req.user })
+      console.log(exerciseAnswers)
+      console.log(Array.isArray(exerciseAnswers))
+      currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
+        .lessons.find(lesson => lesson.lessonPosition === lessonPosition)
+        .exercisesBlocks.find(block => block.blockPosition === blockPosition).blockExercises = exerciseAnswers
+      // console.log(JSON.stringify(currentUser3, 0, 2))
+      await currentUser3.save()
+    } catch (error) {
+      console.log('Error from received data: ', error)
+    }
+  }
+
+  setInitAnswers = async (courseId, username) => {
+    console.log('setInitAnswers TRIGGERED')
+    console.log('courseId: ', courseId)
+
+    console.log('username: ', username)
+
+    const currentUser = await User.findOne({ username })
+    const currentCourse = await Course.findById(courseId).exec()
     if (!currentUser.coursesAnswers) {
       currentUser.coursesAnswers = []
       currentUser.save()
@@ -88,6 +121,7 @@ class ProfileController {
     // console.log('currentUser.coursesAnswers: ', currentUser.coursesAnswers)
 
     if (currentUser.profile.coursesAnswers.find(answer => answer.courseId === courseId) === undefined) {
+      console.log('Have no answers data')
       const lessonData = currentCourse.lessons.map(lesson => {
         return { lessonPosition: lesson.lessonPosition }
       })
@@ -108,28 +142,13 @@ class ProfileController {
 
       console.log(JSON.stringify(courseAnswerData, 0, 2))
       try {
-        const currentUser2 = await User.findOne({ username: req.user })
+        const currentUser2 = await User.findOne({ username })
         currentUser2.profile.coursesAnswers = [...currentUser.coursesAnswers, courseAnswerData]
         console.log('currentUser2: ', currentUser2.profile.coursesAnswers)
         await currentUser2.save()
       } catch (error) {
         console.log('Error from generated: ', error)
       }
-    }
-
-    console.log('do nothing')
-
-    try {
-      const currentUser3 = await User.findOne({ username: req.user })
-      console.log(exerciseAnswers)
-      console.log(Array.isArray(exerciseAnswers))
-      currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
-        .lessons.find(lesson => lesson.lessonPosition === lessonPosition)
-        .exercisesBlocks.find(block => block.blockPosition === blockPosition).blockExercises = exerciseAnswers
-      // console.log(JSON.stringify(currentUser3, 0, 2))
-      await currentUser3.save()
-    } catch (error) {
-      console.log('Error from received data: ', error)
     }
   }
 }
