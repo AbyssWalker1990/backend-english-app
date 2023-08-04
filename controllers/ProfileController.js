@@ -85,6 +85,7 @@ class ProfileController {
   setAnswers = async (req, res) => {
     const { courseId, lessonPosition, blockPosition, exerciseAnswers } = req.body
     const currentUser = await User.findOne({ username: req.user })
+    console.log('lessonPosition: ', lessonPosition)
 
     if (currentUser.profile.coursesAnswers.find(answer => answer.courseId === courseId) === undefined) {
       await this.setInitAnswers(courseId, req.username)
@@ -96,11 +97,30 @@ class ProfileController {
       const currentUser3 = await User.findOne({ username: req.user })
       console.log(exerciseAnswers)
       console.log(Array.isArray(exerciseAnswers))
-      currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
+
+      if (currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
+        .lessons.find(lesson => lesson.lessonPosition === lessonPosition) === undefined) {
+        console.log('creating Lesson')
+        currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
+          .lessons.push({
+            lessonPosition
+          })
+      }
+
+      if (currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
         .lessons.find(lesson => lesson.lessonPosition === lessonPosition)
-        .exercisesBlocks.find(block => block.blockPosition === blockPosition).blockExercises = exerciseAnswers
-      // console.log(JSON.stringify(currentUser3, 0, 2))
-      await currentUser3.save()
+        .exercisesBlocks.find(block => block.blockPosition === blockPosition) !== undefined) {
+        console.log('triggered if')
+        currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
+          .lessons.find(lesson => lesson.lessonPosition === lessonPosition)
+          .exercisesBlocks.find(block => block.blockPosition === blockPosition).blockExercises = exerciseAnswers
+        currentUser3.save()
+      } else {
+        const newBlock = { blockPosition, blockExercises: exerciseAnswers }
+        currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
+          .lessons.find(lesson => lesson.lessonPosition === lessonPosition).exercisesBlocks.push(newBlock)
+        currentUser3.save()
+      }
     } catch (error) {
       console.log('Error from received data: ', error)
     }
