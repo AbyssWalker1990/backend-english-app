@@ -192,17 +192,38 @@ class ProfileController {
       lessonResultWrong: 0
     }
 
+    let lessonResultRight = 0
+    let lessonResultWrong = 0
+    let exerciseCount = 0
     lessonResult.exercisesBlocks.forEach((block, blockIndex) => {
       block.blockExercises.forEach((exercise, exerciseIndex) => {
+        exerciseCount += 1
         const blockRightAnswer = curLesson.exercisesBlocks[blockIndex]
         const correctAnswer = blockRightAnswer.blockExercises[exerciseIndex].correctAnswer
         console.log('correctAnswer: ', correctAnswer)
         exercise.exerciseResult = exercise.studentsAnswer.toLowerCase() === correctAnswer.toLowerCase()
       })
+      block.blockResultRight = block.blockExercises.reduce((acc, exercise) => acc + exercise.exerciseResult, 0)
+      lessonResultRight += block.blockResultRight
+      console.log('lessonResultRight: ', lessonResultRight)
+      block.blockResultWrong = block.blockExercises.length - block.blockResultRight
+      lessonResultWrong += block.blockResultWrong
+      block.blockResultPercent = block.blockResultRight / block.blockExercises.length * 100
     })
+    lessonResult.lessonResultRight = lessonResultRight
+    lessonResult.lessonResultWrong = lessonResultWrong
+    lessonResult.lessonResultPercent = lessonResultRight / exerciseCount * 100
 
-    console.log('result: ', JSON.stringify(lessonResult, 0, 2))
+    if (currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults === undefined) {
+      currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults = []
+    }
+    currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults.push(lessonResult)
 
+
+    await currentUser.save()
+
+    // console.log('result: ', JSON.stringify(lessonResult, 0, 2))
+    console.log('res: ', currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId))
     res.status(200).json({ curLesson, success: true })
   }
 

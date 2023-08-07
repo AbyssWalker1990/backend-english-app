@@ -1,59 +1,9 @@
 const mongoose = require('mongoose')
 
-const courseResultsSchema = new mongoose.Schema({
-  lessons: [{
-    lessonPosition: {
-      type: Number,
-      required: true
-    },
-    lessonResultPercent: {
-      type: Number
-    },
-    lessonResultRight: {
-      type: Number
-    },
-    lessonResultWrong: {
-      type: Number
-    },
-    exercisesBlocks: [
-      {
-        blockPosition: {
-          type: Number,
-          required: true
-        },
-        blockResultPercent: {
-          type: Number
-        },
-        blockResultRight: {
-          type: Number
-        },
-        blockResultWrong: {
-          type: Number
-        },
-        blockExercises: [
-          {
-            exercisePos: {
-              type: Number,
-              required: true
-            },
-            studentsAnswer: {
-              type: String
-            },
-            exerciseResult: {
-              type: Boolean
-            }
-          }
-        ]
-      }
-    ]
-  }
-  ]
-})
-
 const coursesAnswersSchema = new mongoose.Schema({
   courseId: {
     type: String,
-    requred: true
+    required: true
   },
   lessons: [{
     lessonPosition: {
@@ -81,7 +31,54 @@ const coursesAnswersSchema = new mongoose.Schema({
     ]
   }
   ],
-  courseResults: [courseResultsSchema]
+  courseResults: [
+    {
+      lessonPosition: {
+        type: Number,
+        required: true
+      },
+      lessonResultPercent: {
+        type: Number
+      },
+      lessonResultRight: {
+        type: Number
+      },
+      lessonResultWrong: {
+        type: Number
+      },
+      exercisesBlocks: [
+        {
+          blockPosition: {
+            type: Number,
+            required: true
+          },
+          blockResultPercent: {
+            type: Number
+          },
+          blockResultRight: {
+            type: Number
+          },
+          blockResultWrong: {
+            type: Number
+          },
+          blockExercises: [
+            {
+              exercisePos: {
+                type: Number,
+                required: true
+              },
+              studentsAnswer: {
+                type: String
+              },
+              exerciseResult: {
+                type: Boolean
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 })
 
 const userSchema = new mongoose.Schema({
