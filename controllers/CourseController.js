@@ -73,7 +73,7 @@ class CourseController {
   updateCourseById = async (req, res, next) => {
     const courseId = req.params.courseId
     const updatedData = req.body
-    console.log('updatedData: ', updatedData)
+    console.log('updatedData: ', JSON.stringify(updatedData, 0, 2))
     try {
       let course = await Course.findById(courseId).exec()
       course = {
