@@ -174,9 +174,48 @@ class ProfileController {
   }
 
   calculateLessonResult = async (req, res) => {
-    const answersData = req.body
+    const currentUser = await User.findOne({ username: req.user }).exec()
+    const { courseId, lessonPos } = req.body
     console.log('calculateLessonResult Triggered')
-    res.status(200).json({ answersData, success: true })
+    const curLesson = await this.getLessonByPosition(courseId, lessonPos)
+    const curLessonAnswers = await this.getLessonAnswersByPosition(courseId, lessonPos, currentUser)
+    // console.log('curLesson: ', curLesson)
+    // console.log('curLessonAnswers: ', curLessonAnswers)
+
+    // console.log('curLessonAnswers: ', curLessonAnswers)
+
+    let lessonResult = JSON.parse(JSON.stringify(curLessonAnswers))
+    lessonResult = {
+      ...lessonResult,
+      lessonResultPercent: 0,
+      lessonResultRight: 0,
+      lessonResultWrong: 0
+    }
+
+    lessonResult.exercisesBlocks.forEach((block, blockIndex) => {
+      block.blockExercises.forEach((exercise, exerciseIndex) => {
+        const blockRightAnswer = curLesson.exercisesBlocks[blockIndex]
+        const correctAnswer = blockRightAnswer.blockExercises[exerciseIndex].correctAnswer
+        console.log('correctAnswer: ', correctAnswer)
+        exercise.exerciseResult = exercise.studentsAnswer.toLowerCase() === correctAnswer.toLowerCase()
+      })
+    })
+
+    console.log('result: ', JSON.stringify(lessonResult, 0, 2))
+
+    res.status(200).json({ curLesson, success: true })
+  }
+
+  getLessonByPosition = async (courseId, lessonPos) => {
+    const curCourse = await Course.findById(courseId).exec()
+    const curLesson = curCourse.lessons.find(lesson => lesson.lessonPosition === Number(lessonPos))
+    return curLesson
+  }
+
+  getLessonAnswersByPosition = async (courseId, lessonPos, currentUser) => {
+    const courseAnswers = await currentUser.profile.coursesAnswers.find(course => course.courseId === courseId)
+    const lessonAnswers = courseAnswers.lessons.find(lesson => lesson.lessonPosition === Number(lessonPos))
+    return lessonAnswers
   }
 }
 
