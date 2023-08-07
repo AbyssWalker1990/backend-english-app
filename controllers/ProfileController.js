@@ -26,6 +26,7 @@ class ProfileController {
     this.router.post(`${this.path}/set-avatar`, verifyJWT, upload.single('imageInput'), this.setAvatar)
     this.router.post(`${this.path}`, verifyJWT, this.setProfileDescription)
     this.router.post(`${this.path}/init-answers`, verifyJWT, this.setInitAnswers)
+    this.router.post(`${this.path}/calc-lesson`, verifyJWT, this.calculateLessonResult)
     this.router.patch(`${this.path}/answers`, verifyJWT, this.setAnswers)
     this.router.get(`${this.path}`, verifyJWT, this.getProfile)
   }
@@ -170,6 +171,12 @@ class ProfileController {
         console.log('Error from generated: ', error)
       }
     }
+  }
+
+  calculateLessonResult = async (req, res) => {
+    const answersData = req.body
+    console.log('calculateLessonResult Triggered')
+    res.status(200).json({ answersData, success: true })
   }
 }
 
