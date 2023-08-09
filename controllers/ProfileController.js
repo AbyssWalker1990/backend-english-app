@@ -217,9 +217,13 @@ class ProfileController {
     if (currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults === undefined) {
       currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults = []
     }
-    currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults.push(lessonResult)
 
+    const resultsWithoutPrevios = currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults.filter(result => {
+      return result.lessonPosition !== Number(lessonPos)
+    })
+    console.log('resultsWithoutPrevios: ', resultsWithoutPrevios)
 
+    currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults = [...resultsWithoutPrevios, lessonResult]
     await currentUser.save()
 
     // console.log('result: ', JSON.stringify(lessonResult, 0, 2))
