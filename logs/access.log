@@ -5303,3 +5303,10 @@ Too many requests: Too many login attempts, please try again after 60 seconds	PO
 03-08-2023  15:30:57 OPTIONS /profile/answers 200 3.174 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 03-08-2023  15:32:26 OPTIONS /profile/answers 200 3.374 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 03-08-2023  15:33:05 OPTIONS /profile/answers 200 0.459 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+10-08-2023  14:02:10 GET /auth/refresh 200 136.892 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+10-08-2023  14:02:11 OPTIONS /courses 200 1.039 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+10-08-2023  14:02:11 OPTIONS /courses 200 0.687 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+10-08-2023  14:02:11 OPTIONS /profile 200 0.738 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+10-08-2023  14:02:11 GET /profile 304 12.442 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+10-08-2023  14:02:11 GET /courses 304 58.864 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+10-08-2023  14:02:11 GET /courses 304 22.553 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36

@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const { logToConsoleAndFile, logFormat } = require('./config/morganOptions')
 const cookieParser = require('cookie-parser')
 const corsOptions = require('./config/corsOptions')
+const errorMiddleware = require('./middleware/errorMiddleware')
 
 class App {
   constructor (controllers, port) {
@@ -11,6 +12,7 @@ class App {
     this.port = port
     this.initMiddlewares()
     this.initControllers(controllers)
+    this.initErrorMiddleware()
   }
 
   initMiddlewares () {
@@ -25,6 +27,10 @@ class App {
     controllers.forEach((controller) => {
       this.app.use('/', controller.router)
     })
+  }
+
+  initErrorMiddleware () {
+    this.app.use(errorMiddleware)
   }
 
   listen () {
