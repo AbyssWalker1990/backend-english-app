@@ -5310,3 +5310,14 @@ Too many requests: Too many login attempts, please try again after 60 seconds	PO
 10-08-2023  14:02:11 GET /profile 304 12.442 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 10-08-2023  14:02:11 GET /courses 304 58.864 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 10-08-2023  14:02:11 GET /courses 304 22.553 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+10-08-2023  14:42:18 POST /auth/register 201 78.537 ms PostmanRuntime/7.32.3
+Duplicate username10-08-2023  14:44:03 POST /auth/register 500 67.064 ms PostmanRuntime/7.32.3
+Duplicate username10-08-2023  14:45:03 POST /auth/register 500 50.084 ms PostmanRuntime/7.32.3
+Duplicate username10-08-2023  14:45:51 POST /auth/register 409 45.985 ms PostmanRuntime/7.32.3
+Duplicate email10-08-2023  14:46:22 POST /auth/register 409 10.186 ms PostmanRuntime/7.32.3
+Duplicate email10-08-2023  14:51:19 POST /auth/register 409 78.514 ms PostmanRuntime/7.32.3
+10-08-2023  14:51:30 POST /auth/register 201 135.840 ms PostmanRuntime/7.32.3
+Duplicate username10-08-2023  15:53:23 POST /auth/register 409 51.715 ms PostmanRuntime/7.32.3
+Duplicate username10-08-2023  15:54:43 POST /auth/register 409 80.215 ms PostmanRuntime/7.32.3
+Duplicate email10-08-2023  15:54:49 POST /auth/register 409 7.417 ms PostmanRuntime/7.32.3
+All fields are required10-08-2023  15:58:47 POST /auth/register 400 48.705 ms PostmanRuntime/7.32.3
