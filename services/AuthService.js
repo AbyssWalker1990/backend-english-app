@@ -40,6 +40,27 @@ class AuthService {
     return { accessToken, refreshToken }
   }
 
+  getNewAccessToken = async (cookies) => {
+    if (!cookies?.jwt) throw new HttpException(401, 'Unauthorized')
+    const refreshToken = cookies.jwt
+    const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET)
+    const foundUser = await User.findOne({ username: decoded.username }).exec()
+    if (!foundUser) throw new HttpException(401, 'Unauthorized')
+    console.log('decoded: ', decoded)
+
+    const refreshedToken = jwt.sign(
+      {
+        UserInfo: {
+          username: foundUser.username,
+          roles: foundUser.roles
+        }
+      },
+      process.env.ACCESS_TOKEN_SECRET,
+      { expiresIn: '15m' }
+    )
+    return refreshedToken
+  }
+
   getUserByCredentials = async (username, password) => {
     if (!username || !password) throw new HttpException(400, 'All fields are required')
     const foundUser = await User.findOne({ username }).exec()

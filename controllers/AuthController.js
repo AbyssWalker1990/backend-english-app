@@ -46,39 +46,13 @@ class AuthController {
     }
   }
 
-  refresh = async (req, res) => {
-    const cookies = req.cookies
-    console.log('COOKIES: ', cookies)
-    // console.log(req.headers)
-
-    if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized' })
-
-    const refreshToken = cookies.jwt
-
-    jwt.verify(
-      refreshToken,
-      process.env.REFRESH_TOKEN_SECRET,
-      async (err, decoded) => {
-        if (err) return res.status(403).json({ message: 'Forbidden' })
-
-        const foundUser = await User.findOne({ username: decoded.username }).exec()
-
-        if (!foundUser) return res.status(401).json({ message: 'Unauthorized' })
-
-        const accessToken = jwt.sign(
-          {
-            UserInfo: {
-              username: foundUser.username,
-              roles: foundUser.roles
-            }
-          },
-          process.env.ACCESS_TOKEN_SECRET,
-          { expiresIn: '15m' }
-        )
-
-        res.json({ accessToken })
-      }
-    )
+  refresh = async (req, res, next) => {
+    try {
+      const accessToken = await this.authService.getNewAccessToken(req.cookies)
+      res.status(200).json({ accessToken })
+    } catch (error) {
+      next(error)
+    }
   }
 
   logout = (req, res) => {

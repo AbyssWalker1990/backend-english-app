@@ -5329,3 +5329,33 @@ Unauthorized11-08-2023  07:32:21 POST /auth/login 401 37.832 ms PostmanRuntime/7
 11-08-2023  10:02:56 POST /auth/login 200 157.097 ms PostmanRuntime/7.32.3
 All fields are required11-08-2023  10:03:01 POST /auth/login 400 5.267 ms PostmanRuntime/7.32.3
 Unauthorized11-08-2023  10:03:07 POST /auth/login 401 75.811 ms PostmanRuntime/7.32.3
+11-08-2023  10:15:01 POST /auth/login 200 123.553 ms PostmanRuntime/7.32.3
+11-08-2023  10:15:06 GET /auth/refresh 200 3.873 ms PostmanRuntime/7.32.3
+11-08-2023  10:15:07 GET /auth/refresh 200 3.058 ms PostmanRuntime/7.32.3
+11-08-2023  10:15:58 GET /auth/refresh 200 26.090 ms PostmanRuntime/7.32.3
+11-08-2023  10:16:01 GET /auth/refresh 200 2.670 ms PostmanRuntime/7.32.3
+11-08-2023  10:16:57 GET /auth/refresh 200 10.770 ms PostmanRuntime/7.32.3
+11-08-2023  10:17:48 GET /auth/refresh 200 12.192 ms PostmanRuntime/7.32.3
+11-08-2023  10:18:22 GET /auth/refresh 200 14.988 ms PostmanRuntime/7.32.3
+11-08-2023  10:21:23 GET /auth/refresh 200 13.886 ms PostmanRuntime/7.32.3
+11-08-2023  10:41:05 GET /auth/refresh 200 29.290 ms PostmanRuntime/7.32.3
+11-08-2023  10:41:08 GET /auth/refresh 200 5.116 ms PostmanRuntime/7.32.3
+11-08-2023  10:42:43 GET /auth/refresh 200 20.074 ms PostmanRuntime/7.32.3
+11-08-2023  10:43:45 GET /auth/refresh 200 33.655 ms PostmanRuntime/7.32.3
+11-08-2023  10:47:00 GET /auth/refresh 200 11.762 ms PostmanRuntime/7.32.3
+11-08-2023  10:47:46 GET /auth/refresh 200 25.625 ms PostmanRuntime/7.32.3
+11-08-2023  10:51:18 GET /auth/refresh 200 25.627 ms PostmanRuntime/7.32.3
+11-08-2023  10:54:47 GET /auth/refresh 200 28.229 ms PostmanRuntime/7.32.3
+11-08-2023  10:55:40 GET /auth/refresh 200 68.518 ms PostmanRuntime/7.32.3
+11-08-2023  10:56:59 OPTIONS /auth/login 200 2.362 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  10:56:59 POST /auth/login 200 167.142 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  10:57:02 OPTIONS /courses 200 0.515 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  10:57:03 GET /courses 304 89.429 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  10:57:04 GET /courses 304 23.575 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  10:57:35 GET /auth/refresh 200 32.346 ms PostmanRuntime/7.32.3
+Unauthorized11-08-2023  10:58:34 GET /auth/refresh 401 8.900 ms PostmanRuntime/7.32.3
+11-08-2023  10:58:39 POST /auth/login 200 128.122 ms PostmanRuntime/7.32.3
+11-08-2023  10:58:42 GET /auth/refresh 200 12.465 ms PostmanRuntime/7.32.3
+Unexpected token  in JSON at position 2311-08-2023  10:58:53 GET /auth/refresh 500 3.819 ms PostmanRuntime/7.32.3
+Unexpected token  in JSON at position 2311-08-2023  10:59:32 GET /auth/refresh 500 18.493 ms PostmanRuntime/7.32.3
+Unexpected token  in JSON at position 2311-08-2023  11:00:28 GET /auth/refresh 500 10.519 ms PostmanRuntime/7.32.3
