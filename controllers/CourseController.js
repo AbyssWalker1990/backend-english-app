@@ -65,16 +65,8 @@ class CourseController {
     const updatedData = req.body
     console.log('updatedData: ', JSON.stringify(updatedData, 0, 2))
     try {
-      let course = await Course.findById(courseId).exec()
-      course = {
-        title: course.title,
-        description: course.description,
-        lessons: course.lessons,
-        ...updatedData
-      }
-      console.log(course)
-      await Course.findByIdAndUpdate(courseId, course)
-      res.status(200).json({ updated: course.title })
+      const updatedCourse = await this.courseService.updateCourse(courseId, updatedData)
+      res.status(200).json({ updated: updatedCourse.title })
     } catch (error) {
       console.log(error)
       next(error)

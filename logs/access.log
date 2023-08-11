@@ -5400,3 +5400,48 @@ Unexpected token  in JSON at position 2311-08-2023  11:00:28 GET /auth/refresh 
 11-08-2023  11:49:59 OPTIONS /courses/64d61ff9fd3b904a61f8af1c 200 0.286 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 11-08-2023  11:49:59 DELETE /courses/64d61ff9fd3b904a61f8af1c 200 6.058 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 11-08-2023  11:49:59 GET /courses 200 18.772 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:13:54 GET /courses 200 69.863 ms PostmanRuntime/7.32.3
+11-08-2023  12:14:49 PATCH /courses/64c29627466451a61413d4fe 200 73.311 ms PostmanRuntime/7.32.3
+11-08-2023  12:14:56 GET /auth/refresh 200 20.683 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:14:56 OPTIONS /courses 200 0.364 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:14:56 OPTIONS /courses 200 0.597 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:14:56 GET /courses 200 10.777 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:14:56 GET /courses 304 7.565 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:02 PATCH /courses/64c29627466451a61413d4fe 200 22.591 ms PostmanRuntime/7.32.3
+11-08-2023  12:15:05 GET /auth/refresh 200 10.231 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:05 OPTIONS /courses 200 0.197 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:05 OPTIONS /courses 200 0.876 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:05 GET /courses 200 9.233 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:05 GET /courses 304 9.166 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:24 OPTIONS /courses/64c29627466451a61413d4fe 200 0.393 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:24 PATCH /courses/64c29627466451a61413d4fe 200 39.331 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:24 OPTIONS /courses 200 0.244 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:24 GET /courses 200 17.597 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:26 GET /auth/refresh 200 14.310 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:26 GET /courses 304 8.951 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:26 GET /courses 304 13.020 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:30 OPTIONS /courses/64c29627466451a61413d4fe 200 0.387 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:30 PATCH /courses/64c29627466451a61413d4fe 200 39.610 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:30 OPTIONS /courses 200 0.224 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:30 GET /courses 200 8.088 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:50 OPTIONS /courses/64c29627466451a61413d4fe 200 0.373 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:50 PATCH /courses/64c29627466451a61413d4fe 200 36.208 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:50 OPTIONS /courses 200 0.439 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:50 GET /courses 200 17.083 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:52 GET /auth/refresh 200 17.311 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:52 GET /courses 304 7.814 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:15:52 GET /courses 304 10.818 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Cast to ObjectId failed for value "64c29627466451a61413d4f" (type string) at path "_id" for model "Course"11-08-2023  12:16:59 PATCH /courses/64c29627466451a61413d4f 500 15.811 ms PostmanRuntime/7.32.3
+Cannot read properties of undefined (reading 'title')11-08-2023  12:19:49 PATCH /courses/64c29627466451a61413d4f 500 76.031 ms PostmanRuntime/7.32.3
+Cannot read properties of undefined (reading 'title')11-08-2023  12:20:46 PATCH /courses/64c29627466451a61413d4f 500 99.999 ms PostmanRuntime/7.32.3
+Invalid course id11-08-2023  12:22:59 PATCH /courses/64c29627466451a61413d4f 500 35.181 ms PostmanRuntime/7.32.3
+Can not find course11-08-2023  12:23:32 PATCH /courses/64c7dcd8311f2da9b394d407 500 138.916 ms PostmanRuntime/7.32.3
+Plan executor error during findAndModify :: caused by :: Performing an update on the path '_id' would modify the immutable field '_id'11-08-2023  12:24:35 PATCH /courses/64c7dcd8311f2da9b394d407 500 85.696 ms PostmanRuntime/7.32.3
+11-08-2023  12:25:36 OPTIONS /courses/64c29627466451a61413d4fe 200 4.496 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:25:36 PATCH /courses/64c29627466451a61413d4fe 200 89.927 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:25:36 OPTIONS /courses 200 0.207 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:25:36 GET /courses 200 26.939 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:25:48 OPTIONS /courses/64c29627466451a61413d4fe 200 0.692 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:25:48 PATCH /courses/64c29627466451a61413d4fe 200 41.107 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:25:48 OPTIONS /courses 200 0.614 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  12:25:48 GET /courses 200 8.814 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
