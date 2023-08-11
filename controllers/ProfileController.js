@@ -4,19 +4,12 @@ const User = require('../models/User')
 const Course = require('../models/Course')
 const verifyJWT = require('../middleware/verifyJWT')
 const upload = require('../middleware/multer')
-const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3')
-
-const s3Config = {
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  region: 'eu-central-1'
-}
-
-const s3Client = new S3Client(s3Config)
+const ProfileService = require('../services/ProfileService')
 
 class ProfileController {
   path = '/profile'
   router = express.Router()
+  profileService = new ProfileService()
 
   constructor () {
     this.initRoutes()
@@ -31,30 +24,13 @@ class ProfileController {
     this.router.get(`${this.path}`, verifyJWT, this.getProfile)
   }
 
-  setAvatar = async (req, res) => {
-    const currentUser = await User.findOne({ username: req.user })
-
-    console.log(req.file)
-    const ext = req.file.mimetype.split('/')[1]
-    const name = req.file.originalname.split('.')[0]
-
-    const formattedName = `${name}-${new Date().getTime()}.${ext}`
-    const file = req.file.buffer
-
-    const bucketParams = {
-      Bucket: process.env.AWS_S3_BUCKET_NAME,
-      Key: formattedName,
-      Body: file
-    }
+  setAvatar = async (req, res, next) => {
     try {
-      await s3Client.send(new PutObjectCommand(bucketParams))
-      currentUser.profile.photo = `https://english-learn-app.s3.eu-central-1.amazonaws.com/${formattedName}`
-      await currentUser.save()
-    } catch (err) {
-      console.log('Error', err)
+      const isSetPhoto = await this.profileService.uploadAndSetPhoto(req.user, req.file)
+      if (isSetPhoto) res.status(200).json({ success: 'Photo added' })
+    } catch (error) {
+      next(error)
     }
-
-    res.status(200).json({ username: currentUser.username })
   }
 
   setProfileDescription = async (req, res) => {
