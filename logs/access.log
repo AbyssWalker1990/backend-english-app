@@ -5359,3 +5359,44 @@ Unauthorized11-08-2023  10:58:34 GET /auth/refresh 401 8.900 ms PostmanRuntime/7
 Unexpected token  in JSON at position 2311-08-2023  10:58:53 GET /auth/refresh 500 3.819 ms PostmanRuntime/7.32.3
 Unexpected token  in JSON at position 2311-08-2023  10:59:32 GET /auth/refresh 500 18.493 ms PostmanRuntime/7.32.3
 Unexpected token  in JSON at position 2311-08-2023  11:00:28 GET /auth/refresh 500 10.519 ms PostmanRuntime/7.32.3
+11-08-2023  11:41:59 POST /courses 201 130.261 ms PostmanRuntime/7.32.3
+11-08-2023  11:46:01 POST /courses 201 88.261 ms PostmanRuntime/7.32.3
+11-08-2023  11:46:14 GET /auth/refresh 200 49.018 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:14 OPTIONS /courses 200 0.968 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:14 OPTIONS /courses 200 0.714 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:14 GET /courses 200 24.378 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:14 GET /courses 304 23.036 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:25 OPTIONS /courses/64d61e870b3a232968cb7d70 200 0.907 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:25 DELETE /courses/64d61e870b3a232968cb7d70 200 14.021 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:25 OPTIONS /courses 200 0.381 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:25 GET /courses 200 21.100 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:26 OPTIONS /courses/64d61f79fd3b904a61f8ae19 200 0.457 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:26 DELETE /courses/64d61f79fd3b904a61f8ae19 200 8.081 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:26 GET /courses 200 16.083 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:36 OPTIONS /courses 200 0.603 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:36 POST /courses 201 18.564 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:36 GET /courses 200 8.936 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:44 OPTIONS /courses/64d61f9cfd3b904a61f8ae8e 200 0.342 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:44 DELETE /courses/64d61f9cfd3b904a61f8ae8e 200 7.497 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:44 OPTIONS /courses 200 0.166 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:46:44 GET /courses 200 19.779 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:47:26 OPTIONS /courses 200 0.445 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:47:26 POST /courses 201 14.873 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:47:26 GET /courses 200 16.624 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:47:28 OPTIONS /courses/64d61fcefd3b904a61f8aec8 200 0.575 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:47:28 DELETE /courses/64d61fcefd3b904a61f8aec8 200 6.406 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:47:28 GET /courses 200 17.258 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:48:01 OPTIONS /courses 200 0.169 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:48:01 GET /courses 304 8.583 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:48:09 OPTIONS /courses 200 0.248 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:48:09 POST /courses 201 13.334 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:48:09 GET /courses 200 16.723 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:48:11 POST /courses 201 12.503 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:48:11 GET /courses 200 16.421 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:49:58 OPTIONS /courses/64d61ffbfd3b904a61f8af3a 200 0.259 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:49:58 DELETE /courses/64d61ffbfd3b904a61f8af3a 200 5.216 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:49:58 OPTIONS /courses 200 0.405 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:49:58 GET /courses 200 15.428 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:49:59 OPTIONS /courses/64d61ff9fd3b904a61f8af1c 200 0.286 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:49:59 DELETE /courses/64d61ff9fd3b904a61f8af1c 200 6.058 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+11-08-2023  11:49:59 GET /courses 200 18.772 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36

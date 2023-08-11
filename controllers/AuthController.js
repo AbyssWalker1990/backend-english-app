@@ -1,8 +1,5 @@
 const express = require('express')
 const loginLimiter = require('../middleware/loginLimiter')
-const User = require('../models/User')
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
 const AuthService = require('../services/AuthService')
 
 class AuthController {

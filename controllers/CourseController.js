@@ -1,9 +1,11 @@
 const express = require('express')
 const Course = require('../models/Course')
+const CourseService = require('../services/CourseService')
 
 class CourseController {
   path = '/courses'
   router = express.Router()
+  courseService = new CourseService()
 
   constructor () {
     this.initRoutes()
@@ -19,21 +21,10 @@ class CourseController {
   }
 
   createCourse = async (req, res, next) => {
-    const { title, description, lessons } = req.body
-
-    lessons.forEach(element => {
-      console.log(element.lessonExercises)
-    })
     try {
-      const newCourse = await Course.create({
-        title,
-        description,
-        lessons: [...lessons]
-      })
-      // console.log(newCourse)
+      const newCourse = await this.courseService.addNewCourse()
       res.status(201).json({ success: `New Course ${newCourse.title} created!!!` })
     } catch (error) {
-      console.log(error)
       next(error)
     }
   }
@@ -43,7 +34,6 @@ class CourseController {
       const courses = await Course.find()
       res.status(200).json({ courses: [...courses] })
     } catch (error) {
-      console.log(error)
       next(error)
     }
   }
