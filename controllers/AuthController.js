@@ -32,51 +32,18 @@ class AuthController {
   }
 
   login = async (req, res, next) => {
-    const { username, password } = req.body
-    console.log('username: ', username)
-    console.log('password: ', password)
-
-    if (!username || !password) {
-      return res.status(400).json({ message: 'All fields are required' })
+    try {
+      const { accessToken, refreshToken } = await this.authService.authUser(req.body)
+      res.cookie('jwt', refreshToken, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'None',
+        maxAge: 7 * 24 * 60 * 60 * 1000
+      })
+      res.json({ accessToken })
+    } catch (error) {
+      next(error)
     }
-
-    const foundUser = await User.findOne({ username }).exec()
-
-    if (!foundUser || !foundUser.active) {
-      return res.status(401).json({ message: 'Unauthorized' })
-    }
-
-    const match = await bcrypt.compare(password, foundUser.password)
-
-    if (!match) return res.status(401).json({ message: 'Unauthorized' })
-
-    const accessToken = jwt.sign(
-      {
-        UserInfo: {
-          username: foundUser.username,
-          roles: foundUser.roles
-        }
-      },
-      process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: '15m' }
-    )
-
-    const refreshToken = jwt.sign(
-      { username: foundUser.username },
-      process.env.REFRESH_TOKEN_SECRET,
-      { expiresIn: '7d' }
-    )
-
-    // Create secure cookie with refresh token
-    res.cookie('jwt', refreshToken, {
-      httpOnly: true, // accessible only by web server
-      secure: true, // https
-      sameSite: 'None', // cross-site cookie
-      maxAge: 7 * 24 * 60 * 60 * 1000 // cookie expiry: set to match rT
-    })
-
-    // Send accessToken containing username and roles
-    res.json({ accessToken })
   }
 
   refresh = async (req, res) => {

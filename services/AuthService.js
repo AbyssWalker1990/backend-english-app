@@ -19,6 +19,36 @@ class AuthService {
     return user
   }
 
+  authUser = async (credentials) => {
+    const { username, password } = credentials
+    const foundUser = await this.getUserByCredentials(username, password)
+    const accessToken = jwt.sign(
+      {
+        UserInfo: {
+          username: foundUser.username,
+          roles: foundUser.roles
+        }
+      },
+      process.env.ACCESS_TOKEN_SECRET,
+      { expiresIn: '15m' }
+    )
+    const refreshToken = jwt.sign(
+      { username: foundUser.username },
+      process.env.REFRESH_TOKEN_SECRET,
+      { expiresIn: '7d' }
+    )
+    return { accessToken, refreshToken }
+  }
+
+  getUserByCredentials = async (username, password) => {
+    if (!username || !password) throw new HttpException(400, 'All fields are required')
+    const foundUser = await User.findOne({ username }).exec()
+    if (!foundUser || !foundUser.active) throw new HttpException(401, 'Unauthorized')
+    const match = await bcrypt.compare(password, foundUser.password)
+    if (!match) throw new HttpException(401, 'Unauthorized')
+    return foundUser
+  }
+
   isFullRegisterData = (username, password, email, roles) => {
     if (!username || !password || !email || !Array.isArray(roles) || !roles.length) {
       throw new HttpException(400, 'All fields are required')
