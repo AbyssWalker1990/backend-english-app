@@ -5670,3 +5670,17 @@ Unauthorized12-08-2023  12:01:10 POST /auth/login 401 6.953 ms Mozilla/5.0 (X11;
 12-08-2023  12:23:03 POST /profile/calc-lesson 200 54.211 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 12-08-2023  12:23:03 OPTIONS /profile 200 0.378 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 12-08-2023  12:23:03 GET /profile 200 14.969 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  14:59:24 OPTIONS /test 200 6.079 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  14:59:24 GET /test 403 19.486 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  14:59:24 OPTIONS /auth/refresh 200 0.204 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  14:59:24 GET /auth/refresh 200 47.850 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  14:59:24 GET /test 200 4.873 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  15:04:59 GET /auth/refresh 200 10.995 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  15:04:59 OPTIONS /profile 200 0.333 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  15:04:59 OPTIONS /courses 200 0.396 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  15:04:59 OPTIONS /courses 200 0.202 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  15:04:59 GET /profile 304 16.968 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  15:04:59 GET /courses 304 22.485 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  15:04:59 GET /courses 304 10.478 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  15:05:10 OPTIONS /courses 200 0.502 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+12-08-2023  15:05:10 GET /courses 304 10.615 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
