@@ -18,7 +18,6 @@ class ProfileController {
   initRoutes () {
     this.router.post(`${this.path}/set-avatar`, verifyJWT, upload.single('imageInput'), this.setAvatar)
     this.router.post(`${this.path}`, verifyJWT, this.setProfileDescription)
-    this.router.post(`${this.path}/init-answers`, verifyJWT, this.setInitAnswers)
     this.router.post(`${this.path}/calc-lesson`, verifyJWT, this.calculateLessonResult)
     this.router.patch(`${this.path}/answers`, verifyJWT, this.setAnswers)
     this.router.get(`${this.path}`, verifyJWT, this.getProfile)
@@ -34,23 +33,8 @@ class ProfileController {
   }
 
   setProfileDescription = async (req, res) => {
-    console.log(req.body)
-    console.log(req.user)
-    const { course, objectives, priorities, hobbies } = req.body
-    const currentUser = await User.findOne({ username: req.user })
-    const currentCourse = await Course.findOne({ title: course })
-    currentUser.profile.objectives = objectives
-    currentUser.profile.priorities = priorities
-    currentUser.profile.hobbies = hobbies
-    currentUser.profile.activeCourse = course
-    if (!currentUser.profile.courses.includes(course)) {
-      currentUser.profile.courses = [...currentUser.profile.courses, course]
-    }
-    await currentUser.save()
-    if (!currentUser.profile.coursesAnswers.find(answer => answer.courseId === currentCourse._id)) {
-      await this.setInitAnswers(currentCourse._id.toString(), req.user)
-    }
-    res.status(200).json({ message: 'Profile Updated' })
+    const updated = await this.profileService.setProfileData(req.user, req.body)
+    if (updated) res.status(200).json({ message: 'Profile Updated' })
   }
 
   getProfile = async (req, res) => {
@@ -100,52 +84,6 @@ class ProfileController {
       }
     } catch (error) {
       console.log('Error from received data: ', error)
-    }
-  }
-
-  setInitAnswers = async (courseId, username) => {
-    console.log('setInitAnswers TRIGGERED')
-    console.log('courseId: ', courseId)
-
-    console.log('username: ', username)
-
-    const currentUser = await User.findOne({ username })
-    const currentCourse = await Course.findById(courseId).exec()
-    if (!currentUser.coursesAnswers) {
-      currentUser.coursesAnswers = []
-      currentUser.save()
-    }
-    // console.log('currentUser.coursesAnswers: ', currentUser.coursesAnswers)
-
-    if (currentUser.profile.coursesAnswers.find(answer => answer.courseId === courseId) === undefined) {
-      console.log('Have no answers data')
-      const lessonData = currentCourse.lessons.map(lesson => {
-        return { lessonPosition: lesson.lessonPosition }
-      })
-      lessonData.forEach(lesson => {
-        const curLesson = currentCourse.lessons.find(courseLesson => courseLesson.lessonPosition === lesson.lessonPosition)
-        lesson.exercisesBlocks = curLesson.exercisesBlocks.map(block => {
-          return {
-            blockPosition: block.blockPosition,
-            blockExercises: curLesson.exercisesBlocks[block.blockPosition - 1].blockExercises.map(exercise => ({ exercisePos: exercise.exercisePos }))
-          }
-        })
-      })
-
-      const courseAnswerData = {
-        courseId,
-        lessons: lessonData
-      }
-
-      console.log(JSON.stringify(courseAnswerData, 0, 2))
-      try {
-        const currentUser2 = await User.findOne({ username })
-        currentUser2.profile.coursesAnswers = [...currentUser.coursesAnswers, courseAnswerData]
-        console.log('currentUser2: ', currentUser2.profile.coursesAnswers)
-        await currentUser2.save()
-      } catch (error) {
-        console.log('Error from generated: ', error)
-      }
     }
   }
 
