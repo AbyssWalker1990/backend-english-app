@@ -27,6 +27,13 @@ class ProfileService {
     return true
   }
 
+  setProfileActiveCourse = async (courseTitle, username) => {
+    const currentUser = await User.findOne({ username })
+    currentUser.profile.courses.push(courseTitle)
+    currentUser.profile.activeCourse = courseTitle
+    await currentUser.save()
+  }
+
   uploadAndSetPhoto = async (username, photo) => {
     const s3Client = new S3Client(s3Config)
     const currentUser = await User.findOne({ username })

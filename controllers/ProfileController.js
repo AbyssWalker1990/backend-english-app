@@ -9,13 +9,14 @@ class ProfileController {
   router = express.Router()
   profileService = new ProfileService()
 
-  constructor () {
+  constructor() {
     this.initRoutes()
   }
 
-  initRoutes () {
+  initRoutes() {
     this.router.post(`${this.path}/set-avatar`, verifyJWT, upload.single('imageInput'), this.setAvatar)
     this.router.post(`${this.path}`, verifyJWT, this.setProfileDescription)
+    this.router.post(`${this.path}/set-course`, verifyJWT, this.setProfileCourse)
     this.router.post(`${this.path}/calc-lesson`, verifyJWT, this.calculateLessonResult)
     this.router.patch(`${this.path}/answers`, verifyJWT, this.setAnswers)
     this.router.get(`${this.path}`, verifyJWT, this.getProfile)
@@ -25,6 +26,17 @@ class ProfileController {
     try {
       const isSetPhoto = await this.profileService.uploadAndSetPhoto(req.user, req.file)
       if (isSetPhoto) res.status(200).json({ success: 'Photo added' })
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  setProfileCourse = async (req, res, next) => {
+    try {
+      const { courseTitle, username } = req.body.courseTitle
+      console.log(req.body)
+      await this.profileService.setProfileActiveCourse(courseTitle, username)
+      res.status(200).json({ success: 'Active course updated!' })
     } catch (error) {
       next(error)
     }

@@ -6378,3 +6378,73 @@ Unauthorized03-09-2023  11:54:18 POST /auth/login 401 16.702 ms Mozilla/5.0 (X11
 03-09-2023  12:59:21 OPTIONS /courses 200 0.253 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 03-09-2023  12:59:21 GET /profile 200 11.376 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 03-09-2023  12:59:21 GET /courses 304 7.700 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:17:21 OPTIONS /auth/login 200 3.015 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:17:21 POST /auth/login 200 175.704 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:17:34 OPTIONS /profile 200 0.362 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:17:34 OPTIONS /courses 200 0.272 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:17:34 GET /courses 304 24.563 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:17:34 GET /profile 200 22.693 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:17:37 OPTIONS /profile/set-course 200 0.650 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Cannot read properties of null (reading 'profile')03-09-2023  14:17:37 POST /profile/set-course 500 21.968 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:05 OPTIONS /auth/register 200 0.462 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:05 POST /auth/register 201 87.469 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:05 OPTIONS /auth/login 200 0.169 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:05 POST /auth/login 200 84.048 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:05 OPTIONS /courses 200 0.265 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:05 GET /courses 304 7.677 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:14 OPTIONS /profile/set-avatar 200 0.315 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:15 POST /profile/set-avatar 200 539.346 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:20 OPTIONS /profile 200 0.379 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:20 POST /profile 200 80.829 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:20 OPTIONS /courses 200 0.162 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:20 GET /courses 304 4.814 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:30 GET /auth/refresh 200 11.670 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:30 OPTIONS /profile 200 0.220 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:30 OPTIONS /courses 200 0.259 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:30 GET /courses 304 5.131 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:30 GET /profile 200 13.967 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:37 OPTIONS /courses 200 0.221 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:37 GET /courses 304 9.571 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:19:39 OPTIONS /profile/set-course 200 0.282 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Cannot read properties of null (reading 'profile')03-09-2023  14:19:39 POST /profile/set-course 500 8.457 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:20:24 OPTIONS /profile/set-course 200 1.542 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Cannot read properties of null (reading 'profile')03-09-2023  14:20:24 POST /profile/set-course 500 28.037 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:21:15 OPTIONS /profile/set-course 200 0.544 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Cannot read properties of null (reading 'profile')03-09-2023  14:21:15 POST /profile/set-course 500 14.154 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:22:37 GET /auth/refresh 200 27.352 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:22:37 OPTIONS /courses 200 0.227 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:22:37 GET /courses 304 11.854 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:22:38 OPTIONS /profile/set-course 200 0.421 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Cannot read properties of null (reading 'profile')03-09-2023  14:22:38 POST /profile/set-course 500 5.040 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:23:09 OPTIONS /profile/set-course 200 3.378 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Cannot read properties of null (reading 'profile')03-09-2023  14:23:09 POST /profile/set-course 500 54.480 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Cannot read properties of null (reading 'profile')03-09-2023  14:23:11 POST /profile/set-course 500 12.122 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:24:28 GET /auth/refresh 200 42.067 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:24:28 OPTIONS /courses 200 0.737 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:24:28 GET /courses 304 9.981 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:24:31 OPTIONS /profile/set-course 200 0.369 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Cannot read properties of null (reading 'profile')03-09-2023  14:24:31 POST /profile/set-course 500 33.291 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:25:42 GET /auth/refresh 200 13.592 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:25:42 OPTIONS /courses 200 0.366 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:25:42 GET /courses 304 7.228 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:25:44 OPTIONS /profile/set-course 200 0.444 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Cannot read properties of null (reading 'profile')03-09-2023  14:25:44 POST /profile/set-course 500 11.580 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:28:16 OPTIONS /profile/set-course 200 1.594 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Cannot read properties of null (reading 'profile')03-09-2023  14:28:16 POST /profile/set-course 500 31.542 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:29:20 OPTIONS /profile/set-course 200 1.659 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+courseTitle is not defined03-09-2023  14:29:20 POST /profile/set-course 500 18.936 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:31:05 OPTIONS /profile/set-course 200 3.379 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:31:05 POST /profile/set-course 200 43.483 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:32:45 OPTIONS /profile/set-course 200 1.968 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:32:45 POST /profile/set-course 200 89.458 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:33:35 OPTIONS /profile 200 0.303 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:33:35 OPTIONS /courses 200 0.300 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:33:35 GET /profile 200 14.181 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:33:35 GET /courses 304 20.480 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:33:47 GET /auth/refresh 200 13.804 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:33:47 OPTIONS /profile 200 0.426 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:33:47 OPTIONS /courses 200 0.375 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:33:47 OPTIONS /courses 200 0.239 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:33:47 GET /profile 304 9.158 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:33:47 GET /courses 304 11.181 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+03-09-2023  14:33:47 GET /courses 304 5.394 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
