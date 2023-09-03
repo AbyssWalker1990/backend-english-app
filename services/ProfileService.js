@@ -29,9 +29,13 @@ class ProfileService {
 
   setProfileActiveCourse = async (courseTitle, username) => {
     const currentUser = await User.findOne({ username })
+    const currentCourse = await Course.findOne({ title: courseTitle })
     console.log(currentUser)
     currentUser.profile.courses.push(courseTitle)
     currentUser.profile.activeCourse = courseTitle
+    if (!currentUser.profile.coursesAnswers.find((answer) => answer.courseId === currentCourse._id)) {
+      await this.setInitAnswers(currentCourse._id.toString(), username)
+    }
     await currentUser.save()
   }
 
