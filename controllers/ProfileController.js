@@ -33,8 +33,7 @@ class ProfileController {
 
   setProfileCourse = async (req, res, next) => {
     try {
-      const { courseTitle, username } = req.body.courseTitle
-      console.log(req.body)
+      const { courseTitle, username } = req.body
       await this.profileService.setProfileActiveCourse(courseTitle, username)
       res.status(200).json({ success: 'Active course updated!' })
     } catch (error) {
