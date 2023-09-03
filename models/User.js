@@ -5,31 +5,32 @@ const coursesAnswersSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  lessons: [{
-    lessonPosition: {
-      type: Number,
-      required: true
-    },
-    exercisesBlocks: [
-      {
-        blockPosition: {
-          type: Number,
-          required: true
-        },
-        blockExercises: [
-          {
-            exercisePos: {
-              type: Number,
-              required: true
-            },
-            studentsAnswer: {
-              type: String
+  lessons: [
+    {
+      lessonPosition: {
+        type: Number,
+        required: true
+      },
+      exercisesBlocks: [
+        {
+          blockPosition: {
+            type: Number,
+            required: true
+          },
+          blockExercises: [
+            {
+              exercisePos: {
+                type: Number,
+                required: true
+              },
+              studentsAnswer: {
+                type: String
+              }
             }
-          }
-        ]
-      }
-    ]
-  }
+          ]
+        }
+      ]
+    }
   ],
   courseResults: [
     {
@@ -94,10 +95,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  roles: [{
-    type: String,
-    default: 'User'
-  }],
+  roles: [
+    {
+      type: String,
+      default: 'User'
+    }
+  ],
   active: {
     type: Boolean,
     default: true
@@ -111,13 +114,13 @@ const userSchema = new mongoose.Schema({
       type: String
     },
     objectives: {
-      type: String
+      type: [String]
     },
     priorities: {
-      type: String
+      type: [String]
     },
     hobbies: {
-      type: String
+      type: [String]
     },
     coursesAnswers: [coursesAnswersSchema]
   }

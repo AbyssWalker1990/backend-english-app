@@ -9,15 +9,19 @@ class ProfileService {
     const { course, objectives, priorities, hobbies } = profileData
     const currentUser = await User.findOne({ username })
     const currentCourse = await Course.findOne({ title: course })
-    currentUser.profile.objectives = objectives
-    currentUser.profile.priorities = priorities
-    currentUser.profile.hobbies = hobbies
+    console.log('currentCourse: ', currentCourse)
+    const updatedObjectives = this.formatProfileData(objectives)
+    const updatedPriorities = this.formatProfileData(priorities)
+    const updatedHobbies = this.formatProfileData(hobbies)
+    currentUser.profile.objectives = updatedObjectives
+    currentUser.profile.priorities = updatedPriorities
+    currentUser.profile.hobbies = updatedHobbies
     currentUser.profile.activeCourse = course
     if (!currentUser.profile.courses.includes(course)) {
       currentUser.profile.courses = [...currentUser.profile.courses, course]
     }
     await currentUser.save()
-    if (!currentUser.profile.coursesAnswers.find(answer => answer.courseId === currentCourse._id)) {
+    if (!currentUser.profile.coursesAnswers.find((answer) => answer.courseId === currentCourse._id)) {
       await this.setInitAnswers(currentCourse._id.toString(), username)
     }
     return true
@@ -45,7 +49,7 @@ class ProfileService {
     console.log('trigger updateAnswers')
     const { courseId, lessonPosition, blockPosition, exerciseAnswers } = answersData
     const currentUser = await User.findOne({ username })
-    if (currentUser.profile.coursesAnswers.find(answer => answer.courseId === courseId) === undefined) {
+    if (currentUser.profile.coursesAnswers.find((answer) => answer.courseId === courseId) === undefined) {
       await this.setInitAnswers(courseId, username)
     }
 
@@ -54,25 +58,35 @@ class ProfileService {
       console.log(exerciseAnswers)
       console.log(Array.isArray(exerciseAnswers))
 
-      if (currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
-        .lessons.find(lesson => lesson.lessonPosition === lessonPosition) === undefined) {
-        currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
+      if (
+        currentUser3.profile.coursesAnswers
+          .find((course) => course.courseId === courseId)
+          .lessons.find((lesson) => lesson.lessonPosition === lessonPosition) === undefined
+      ) {
+        currentUser3.profile.coursesAnswers
+          .find((course) => course.courseId === courseId)
           .lessons.push({
             lessonPosition
           })
       }
 
-      if (currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
-        .lessons.find(lesson => lesson.lessonPosition === lessonPosition)
-        .exercisesBlocks.find(block => block.blockPosition === blockPosition) !== undefined) {
-        currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
-          .lessons.find(lesson => lesson.lessonPosition === lessonPosition)
-          .exercisesBlocks.find(block => block.blockPosition === blockPosition).blockExercises = exerciseAnswers
+      if (
+        currentUser3.profile.coursesAnswers
+          .find((course) => course.courseId === courseId)
+          .lessons.find((lesson) => lesson.lessonPosition === lessonPosition)
+          .exercisesBlocks.find((block) => block.blockPosition === blockPosition) !== undefined
+      ) {
+        currentUser3.profile.coursesAnswers
+          .find((course) => course.courseId === courseId)
+          .lessons.find((lesson) => lesson.lessonPosition === lessonPosition)
+          .exercisesBlocks.find((block) => block.blockPosition === blockPosition).blockExercises = exerciseAnswers
         currentUser3.save()
       } else {
         const newBlock = { blockPosition, blockExercises: exerciseAnswers }
-        currentUser3.profile.coursesAnswers.find(course => course.courseId === courseId)
-          .lessons.find(lesson => lesson.lessonPosition === lessonPosition).exercisesBlocks.push(newBlock)
+        currentUser3.profile.coursesAnswers
+          .find((course) => course.courseId === courseId)
+          .lessons.find((lesson) => lesson.lessonPosition === lessonPosition)
+          .exercisesBlocks.push(newBlock)
         currentUser3.save()
       }
     } catch (error) {
@@ -88,28 +102,35 @@ class ProfileService {
     const blankAnswers = this.generateBlankLessonResult(curLessonAnswers)
     const lessonResult = this.calculateAndAddLessonResults(blankAnswers, curLesson)
 
-    if (currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults === undefined) {
-      currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults = []
+    if (
+      currentUser.profile.coursesAnswers.find((answers) => answers.courseId === courseId).courseResults === undefined
+    ) {
+      currentUser.profile.coursesAnswers.find((answers) => answers.courseId === courseId).courseResults = []
     }
 
-    const resultsWithoutPrevios = currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults.filter(result => {
-      return result.lessonPosition !== Number(lessonPos)
-    })
+    const resultsWithoutPrevios = currentUser.profile.coursesAnswers
+      .find((answers) => answers.courseId === courseId)
+      .courseResults.filter((result) => {
+        return result.lessonPosition !== Number(lessonPos)
+      })
 
-    currentUser.profile.coursesAnswers.find(answers => answers.courseId === courseId).courseResults = [...resultsWithoutPrevios, lessonResult]
+    currentUser.profile.coursesAnswers.find((answers) => answers.courseId === courseId).courseResults = [
+      ...resultsWithoutPrevios,
+      lessonResult
+    ]
     await currentUser.save()
     return curLesson
   }
 
   getLessonByPosition = async (courseId, lessonPos) => {
     const curCourse = await Course.findById(courseId).exec()
-    const curLesson = curCourse.lessons.find(lesson => lesson.lessonPosition === Number(lessonPos))
+    const curLesson = curCourse.lessons.find((lesson) => lesson.lessonPosition === Number(lessonPos))
     return curLesson
   }
 
   getLessonAnswersByPosition = async (courseId, lessonPos, currentUser) => {
-    const courseAnswers = await currentUser.profile.coursesAnswers.find(course => course.courseId === courseId)
-    const lessonAnswers = courseAnswers.lessons.find(lesson => lesson.lessonPosition === Number(lessonPos))
+    const courseAnswers = await currentUser.profile.coursesAnswers.find((course) => course.courseId === courseId)
+    const lessonAnswers = courseAnswers.lessons.find((lesson) => lesson.lessonPosition === Number(lessonPos))
     return lessonAnswers
   }
 
@@ -141,11 +162,11 @@ class ProfileService {
       console.log('lessonResultRight: ', lessonResultRight)
       block.blockResultWrong = block.blockExercises.length - block.blockResultRight
       lessonResultWrong += block.blockResultWrong
-      block.blockResultPercent = block.blockResultRight / block.blockExercises.length * 100
+      block.blockResultPercent = (block.blockResultRight / block.blockExercises.length) * 100
     })
     lessonResult.lessonResultRight = lessonResultRight
     lessonResult.lessonResultWrong = lessonResultWrong
-    lessonResult.lessonResultPercent = lessonResultRight / exerciseCount * 100
+    lessonResult.lessonResultPercent = (lessonResultRight / exerciseCount) * 100
     return lessonResult
   }
 
@@ -156,13 +177,14 @@ class ProfileService {
   }
 
   setInitAnswers = async (courseId, username) => {
+    console.log('courseId: ', courseId)
     const currentUser = await User.findOne({ username })
     const currentCourse = await Course.findById(courseId).exec()
     if (!currentUser.coursesAnswers) {
       currentUser.coursesAnswers = []
-      currentUser.save()
+      await currentUser.save()
     }
-    if (currentUser.profile.coursesAnswers.find(answer => answer.courseId === courseId) === undefined) {
+    if (currentUser.profile.coursesAnswers.find((answer) => answer.courseId === courseId) === undefined) {
       const lessonAnswersData = this.buildCourseAnswersStucture(currentCourse)
 
       const courseAnswerData = {
@@ -172,27 +194,42 @@ class ProfileService {
       try {
         const currentUser2 = await User.findOne({ username })
         currentUser2.profile.coursesAnswers = [...currentUser.coursesAnswers, courseAnswerData]
+        console.log('currentUser2: ', currentUser2)
         await currentUser2.save()
       } catch (error) {
+        console.log('EXACTLY THIS ERROR')
         throw new HttpException(500, error.message)
       }
     }
   }
 
   buildCourseAnswersStucture = (course) => {
-    const lessonAnswersData = course.lessons.map(lesson => {
+    const lessonAnswersData = course.lessons.map((lesson) => {
       return { lessonPosition: lesson.lessonPosition }
     })
-    lessonAnswersData.forEach(lesson => {
-      const curLesson = course.lessons.find(courseLesson => courseLesson.lessonPosition === lesson.lessonPosition)
-      lesson.exercisesBlocks = curLesson.exercisesBlocks.map(block => {
+    lessonAnswersData.forEach((lesson) => {
+      const curLesson = course.lessons.find((courseLesson) => courseLesson.lessonPosition === lesson.lessonPosition)
+      lesson.exercisesBlocks = curLesson.exercisesBlocks.map((block) => {
         return {
           blockPosition: block.blockPosition,
-          blockExercises: curLesson.exercisesBlocks[block.blockPosition - 1].blockExercises.map(exercise => ({ exercisePos: exercise.exercisePos }))
+          blockExercises: curLesson.exercisesBlocks[block.blockPosition - 1].blockExercises.map((exercise) => ({
+            exercisePos: exercise.exercisePos
+          }))
         }
       })
     })
     return lessonAnswersData
+  }
+
+  formatProfileData = (data) => {
+    const dataArray = data.split(',').map((el) => {
+      console.log(el)
+      el.trim()
+      if (el.length > 0) el[0].toUpperCase()
+      return el
+    })
+    const withoutEmpty = dataArray.filter((el) => el.length > 0 && !/^ +$/.test(el))
+    return withoutEmpty
   }
 }
 

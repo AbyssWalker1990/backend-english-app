@@ -13,7 +13,12 @@ class AuthService {
     await this.isDuplicate(email, 'email')
 
     const hashedPwd = await bcrypt.hash(password, 10)
-    const userObject = { username, password: hashedPwd, email, roles: currentRoles }
+    const userObject = {
+      username,
+      password: hashedPwd,
+      email,
+      roles: currentRoles
+    }
     const user = await User.create(userObject)
 
     return user
@@ -32,11 +37,9 @@ class AuthService {
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: '15m' }
     )
-    const refreshToken = jwt.sign(
-      { username: foundUser.username },
-      process.env.REFRESH_TOKEN_SECRET,
-      { expiresIn: '7d' }
-    )
+    const refreshToken = jwt.sign({ username: foundUser.username }, process.env.REFRESH_TOKEN_SECRET, {
+      expiresIn: '7d'
+    })
     return { accessToken, refreshToken }
   }
 
@@ -62,9 +65,13 @@ class AuthService {
   }
 
   getUserByCredentials = async (username, password) => {
-    if (!username || !password) throw new HttpException(400, 'All fields are required')
+    if (!username || !password) {
+      throw new HttpException(400, 'All fields are required')
+    }
     const foundUser = await User.findOne({ username }).exec()
-    if (!foundUser || !foundUser.active) throw new HttpException(401, 'Unauthorized')
+    if (!foundUser || !foundUser.active) {
+      throw new HttpException(401, 'Unauthorized')
+    }
     const match = await bcrypt.compare(password, foundUser.password)
     if (!match) throw new HttpException(401, 'Unauthorized')
     return foundUser
@@ -77,7 +84,9 @@ class AuthService {
   }
 
   isDuplicate = async (fieldData, fieldName) => {
-    const user = await User.findOne({ [fieldName]: fieldData }).lean().exec()
+    const user = await User.findOne({ [fieldName]: fieldData })
+      .lean()
+      .exec()
     if (user) throw new HttpException(409, `Duplicate ${fieldName}`)
   }
 }

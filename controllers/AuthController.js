@@ -21,6 +21,7 @@ class AuthController {
   register = async (req, res, next) => {
     try {
       const user = await this.authService.createNewUser(req.body)
+      console.log(JSON.stringify(user, 0, 2))
       res.status(201).json({ message: `New user ${user.username} created` })
     } catch (error) {
       console.log(error)
