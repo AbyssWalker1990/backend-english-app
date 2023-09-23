@@ -1,5 +1,16 @@
 const mongoose = require('mongoose')
 
+const wordCardsSchema = new mongoose.Schema({
+  english: {
+    type: String,
+    required: true
+  },
+  ukrainian: {
+    type: String,
+    required: true
+  }
+})
+
 const exercisesSchema = new mongoose.Schema({
   exercisePos: {
     type: Number,
@@ -57,7 +68,8 @@ const courseSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  lessons: [lessonSchema]
+  lessons: [lessonSchema],
+  wordCards: [wordCardsSchema]
 })
 
 module.exports = mongoose.model('Course', courseSchema)
