@@ -33,6 +33,32 @@ class CourseService {
       }
     }
   }
+
+  transformCardsToArray = (cards) => {
+    const rawCards = cards.split(';')
+    const filteredRawCards = rawCards.filter((card) => card.trim().length > 0)
+    const transformedCards = filteredRawCards.map((card) => {
+      card.trim()
+      const splittedCard = card.split(':')
+      const trimmedWords = splittedCard.map((word) => word.trim())
+      return {
+        english: trimmedWords[0],
+        ukrainian: trimmedWords[1]
+      }
+    })
+    return transformedCards
+  }
+
+  updateCardsByLessonPos = async (courseId, lessonPos, cards) => {
+    try {
+      const currentCourse = await Course.findById(courseId).exec()
+      const lesson = currentCourse.lessons.find((lesson) => lesson.lessonPosition === Number(lessonPos))
+      lesson.wordCards = cards
+      await currentCourse.save()
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
 }
 
 module.exports = CourseService

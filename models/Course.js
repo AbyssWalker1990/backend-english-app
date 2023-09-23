@@ -56,7 +56,8 @@ const lessonSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  exercisesBlocks: [exercisesBlockSchema]
+  exercisesBlocks: [exercisesBlockSchema],
+  wordCards: [wordCardsSchema]
 })
 
 const courseSchema = new mongoose.Schema({
@@ -68,8 +69,7 @@ const courseSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  lessons: [lessonSchema],
-  wordCards: [wordCardsSchema]
+  lessons: [lessonSchema]
 })
 
 module.exports = mongoose.model('Course', courseSchema)

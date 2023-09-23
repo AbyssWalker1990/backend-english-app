@@ -7,17 +7,18 @@ class CourseController {
   router = express.Router()
   courseService = new CourseService()
 
-  constructor () {
+  constructor() {
     this.initRoutes()
   }
 
-  initRoutes () {
+  initRoutes() {
     this.router.post(`${this.path}`, this.createCourse)
     this.router.get(`${this.path}`, this.getAllCourses)
     this.router.get(`${this.path}/test`, this.getTest)
     this.router.get(`${this.path}/:courseId`, this.getCourseById)
     this.router.delete(`${this.path}/:courseId`, this.deleteCourseById)
     this.router.patch(`${this.path}/:courseId`, this.updateCourseById)
+    this.router.patch(`${this.path}/:courseId/cards/:lessonPos`, this.updateCards)
   }
 
   createCourse = async (req, res, next) => {
@@ -69,6 +70,20 @@ class CourseController {
       res.status(200).json({ updated: updatedCourse.title })
     } catch (error) {
       console.log(error)
+      next(error)
+    }
+  }
+
+  updateCards = async (req, res, next) => {
+    const courseId = req.params.courseId
+    const lessonPos = req.params.lessonPos
+    const { cards } = req.body
+    try {
+      const transformedCards = this.courseService.transformCardsToArray(cards)
+      console.log(transformedCards)
+      await this.courseService.updateCardsByLessonPos(courseId, lessonPos, transformedCards)
+      res.status(200).json({ updated: courseId })
+    } catch (error) {
       next(error)
     }
   }
