@@ -53,8 +53,7 @@ const lessonSchema = new mongoose.Schema({
     required: true
   },
   lessonDescription: {
-    type: String,
-    required: true
+    type: String
   },
   exercisesBlocks: [exercisesBlockSchema],
   wordCards: [wordCardsSchema]
