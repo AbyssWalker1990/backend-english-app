@@ -37,8 +37,7 @@ const exercisesBlockSchema = new mongoose.Schema({
     required: true
   },
   blockDescription: {
-    type: String,
-    required: true
+    type: String
   },
   blockExercises: [exercisesSchema]
 })
