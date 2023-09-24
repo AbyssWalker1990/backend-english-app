@@ -51,11 +51,8 @@ class CourseService {
 
   updateCardsByLessonPos = async (courseId, lessonPos, cards) => {
     try {
-      const currentCourse = await Course.findById(courseId).exec()
-      const lesson = currentCourse.lessons.find((lesson) => lesson.lessonPosition === Number(lessonPos))
-      lesson.wordCards = cards
-      console.log('lesson: ', lesson)
-      console.log('currentCourse: ', currentCourse)
+      const currentCourse = await Course.findById(courseId)
+      currentCourse.lessons.find((lesson) => lesson.lessonPosition === Number(lessonPos)).wordCards = cards
       await currentCourse.save()
     } catch (error) {
       throw new Error(error)
