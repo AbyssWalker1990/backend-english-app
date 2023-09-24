@@ -54,6 +54,8 @@ class CourseService {
       const currentCourse = await Course.findById(courseId).exec()
       const lesson = currentCourse.lessons.find((lesson) => lesson.lessonPosition === Number(lessonPos))
       lesson.wordCards = cards
+      console.log('lesson: ', lesson)
+      console.log('currentCourse: ', currentCourse)
       await currentCourse.save()
     } catch (error) {
       throw new Error(error)
