@@ -49,7 +49,8 @@ class ProfileController {
   getProfile = async (req, res) => {
     const currentUser = await User.findOne({ username: req.user })
     const { photo, objectives, priorities, hobbies, courses, activeCourse, coursesAnswers } = currentUser.profile
-    res.status(200).json({ photo, objectives, priorities, hobbies, courses, activeCourse, coursesAnswers })
+    const { gender } = currentUser
+    res.status(200).json({ photo, objectives, priorities, hobbies, courses, activeCourse, coursesAnswers, gender })
   }
 
   setAnswers = async (req, res, next) => {
