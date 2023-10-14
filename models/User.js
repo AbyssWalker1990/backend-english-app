@@ -123,6 +123,10 @@ const userSchema = new mongoose.Schema({
       type: [String]
     },
     coursesAnswers: [coursesAnswersSchema]
+  },
+  gender: {
+    type: String,
+    default: 'male'
   }
 })
 

@@ -6,13 +6,15 @@ const HttpException = require('../exceptions/HttpException')
 
 class ProfileService {
   setProfileData = async (username, profileData) => {
-    const { course, objectives, priorities, hobbies } = profileData
+    const { course, objectives, priorities, hobbies, gender } = profileData
     const currentUser = await User.findOne({ username })
     const currentCourse = await Course.findOne({ title: course })
-    console.log('currentCourse: ', currentCourse)
+    console.log(gender)
+    console.log(typeof gender)
     const updatedObjectives = this.formatProfileData(objectives)
     const updatedPriorities = this.formatProfileData(priorities)
     const updatedHobbies = this.formatProfileData(hobbies)
+    currentUser.gender = gender
     currentUser.profile.objectives = updatedObjectives
     currentUser.profile.priorities = updatedPriorities
     currentUser.profile.hobbies = updatedHobbies
