@@ -15,9 +15,7 @@ class ProfileController {
   }
 
   initRoutes() {
-    this.router.post('/success_payment', (req, res) => {
-      res.status(200).json({ success: true })
-    })
+    this.router.post('/success_payment', this.processPayment)
     this.router.post(`${this.path}/set-avatar`, verifyJWT, upload.single('imageInput'), this.setAvatar)
     this.router.post(`${this.path}`, verifyJWT, this.setProfileDescription)
     this.router.post(`${this.path}/set-course`, verifyJWT, this.setProfileCourse)
@@ -27,6 +25,7 @@ class ProfileController {
   }
 
   processPayment = async (req, res, next) => {
+    console.log('Process payment')
     const xmlData = req.body.data
     const jsonData = JSON.stringify(xmlData)
     console.log(jsonData)
