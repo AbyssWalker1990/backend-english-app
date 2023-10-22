@@ -15,6 +15,7 @@ class ProfileController {
   }
 
   initRoutes() {
+    this.router.get('/success_payment', (req, res) => res.redirect('https://e-w-s.netlify.app/success_payment'))
     this.router.post('/success_payment', this.processPayment)
     this.router.post(`${this.path}/set-avatar`, verifyJWT, upload.single('imageInput'), this.setAvatar)
     this.router.post(`${this.path}`, verifyJWT, this.setProfileDescription)
@@ -27,9 +28,8 @@ class ProfileController {
   processPayment = async (req, res, next) => {
     console.log('Process payment')
     const xmlData = req.body
-    const jsonData = JSON.parse(xmlData)
-    console.log(jsonData)
-    res.status(200).json({ jsonData })
+    console.log(xmlData)
+    res.status(200)
   }
 
   setAvatar = async (req, res, next) => {
