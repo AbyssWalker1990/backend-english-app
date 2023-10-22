@@ -9159,3 +9159,13 @@ No matching document found for id "64e9d587ef737e23376e8cfd" version 0 modifiedP
 14-10-2023  16:20:11 OPTIONS /courses 200 0.204 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 14-10-2023  16:20:11 GET /profile 304 12.753 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 14-10-2023  16:20:11 GET /courses 304 19.426 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+22-10-2023  09:19:56 GET /courses 200 105.425 ms PostmanRuntime/7.33.0
+Not allowed by CORS22-10-2023  09:20:37 GET /courses 500 1.635 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+22-10-2023  09:20:50 GET /courses 200 44.394 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Not allowed by CORS22-10-2023  09:21:10 GET /courses 500 1.514 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+Not allowed by CORS22-10-2023  09:21:23 GET /courses 500 1.193 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+22-10-2023  09:22:34 GET /courses 200 43.110 ms PostmanRuntime/7.33.0
+Not allowed by CORS22-10-2023  09:22:44 GET /courses 500 2.513 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+22-10-2023  09:23:46 GET /courses 200 41.084 ms PostmanRuntime/7.33.0
+Not allowed by CORS22-10-2023  09:24:11 GET /courses 500 2.581 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+22-10-2023  09:25:05 GET /courses 200 60.280 ms Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36

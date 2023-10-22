@@ -5,9 +5,7 @@ const allowedOrigins = [
   'https://main--bright-bunny-20b68d.netlify.app/',
   'https://e-w-s.netlify.app',
   '*.netlify.app',
-  'https://www.portmone.com.ua/*',
-  'https://www.portmone.com.ua/',
-  /^https:\/\/www\.portmone\.com\.ua\//
+  'https://www.portmone.com.ua'
 ]
 
 module.exports = allowedOrigins
