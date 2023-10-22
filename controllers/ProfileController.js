@@ -28,7 +28,11 @@ class ProfileController {
   processPayment = async (req, res, next) => {
     console.log('Process payment')
     const xmlData = req.body
+    const course = req.body.DESCRIPTION
+    const email = req.body.ATTRIBUTE1
     console.log(xmlData)
+    console.log('course: ', course)
+    console.log('email: ', email)
     res.status(200)
   }
 
