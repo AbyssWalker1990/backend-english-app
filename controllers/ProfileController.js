@@ -26,10 +26,8 @@ class ProfileController {
 
   processPayment = async (req, res, next) => {
     console.log('Process payment')
-    console.log('req: ', req)
-    console.log('req.data: ', req.data)
     const xmlData = req.body
-    const jsonData = JSON.stringify(xmlData)
+    const jsonData = JSON.parse(xmlData)
     console.log(jsonData)
     res.status(200).json({ jsonData })
   }
