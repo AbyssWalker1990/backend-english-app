@@ -1,4 +1,5 @@
 const express = require('express')
+const xml2js = require('xml2js')
 const User = require('../models/User')
 const verifyJWT = require('../middleware/verifyJWT')
 const upload = require('../middleware/multer')
@@ -23,6 +24,13 @@ class ProfileController {
     this.router.post(`${this.path}/calc-lesson`, verifyJWT, this.calculateLessonResult)
     this.router.patch(`${this.path}/answers`, verifyJWT, this.setAnswers)
     this.router.get(`${this.path}`, verifyJWT, this.getProfile)
+  }
+
+  processPayment = async (req, res, next) => {
+    const xmlData = req.body.data
+    const jsonData = JSON.stringify(xmlData)
+    console.log(jsonData)
+    res.status(200).json({ jsonData })
   }
 
   setAvatar = async (req, res, next) => {
