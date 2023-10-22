@@ -33,7 +33,11 @@ class ProfileController {
     console.log(xmlData)
     console.log('course: ', course)
     console.log('email: ', email)
-    res.status(200)
+
+    const currentUser = await User.findOne({ email })
+    currentUser.profile.courses.push(course)
+    await this.setProfileActiveCourse(course, currentUser.username)
+    res.redirect('https://e-w-s.netlify.app/success_payment')
   }
 
   setAvatar = async (req, res, next) => {
