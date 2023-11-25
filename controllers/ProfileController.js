@@ -1,5 +1,4 @@
 const express = require('express')
-const xml2js = require('xml2js')
 const User = require('../models/User')
 const verifyJWT = require('../middleware/verifyJWT')
 const upload = require('../middleware/multer')

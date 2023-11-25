@@ -9,8 +9,6 @@ class ProfileService {
     const { course, objectives, priorities, hobbies, gender } = profileData
     const currentUser = await User.findOne({ username })
     const currentCourse = await Course.findOne({ title: course })
-    console.log(gender)
-    console.log(typeof gender)
     const updatedObjectives = this.formatProfileData(objectives)
     const updatedPriorities = this.formatProfileData(priorities)
     const updatedHobbies = this.formatProfileData(hobbies)
@@ -32,7 +30,6 @@ class ProfileService {
   setProfileActiveCourse = async (courseTitle, username) => {
     const currentUser = await User.findOne({ username })
     const currentCourse = await Course.findOne({ title: courseTitle })
-    console.log(currentUser)
     currentUser.profile.courses.push(courseTitle)
     currentUser.profile.activeCourse = courseTitle
     if (!currentUser.profile.coursesAnswers.find((answer) => answer.courseId === currentCourse._id)) {
@@ -53,7 +50,7 @@ class ProfileService {
       Body: photo.buffer
     }
     await s3Client.send(new PutObjectCommand(bucketParams))
-    currentUser.profile.photo = `https://english-learn-app.s3.eu-central-1.amazonaws.com/${formattedName}`
+    currentUser.profile.photo = `https://english-app1000.s3.eu-north-1.amazonaws.com/${formattedName}`
     await currentUser.save()
 
     return true
