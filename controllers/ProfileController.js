@@ -20,8 +20,23 @@ class ProfileController {
     this.router.post(`${this.path}`, verifyJWT, this.setProfileDescription)
     this.router.post(`${this.path}/set-course`, verifyJWT, this.setProfileCourse)
     this.router.post(`${this.path}/calc-lesson`, verifyJWT, this.calculateLessonResult)
+    this.router.post(`${this.path}/success-diary`, verifyJWT, this.createSuccessRecord)
     this.router.patch(`${this.path}/answers`, verifyJWT, this.setAnswers)
     this.router.get(`${this.path}`, verifyJWT, this.getProfile)
+  }
+
+  createSuccessRecord = async (req, res, next) => {
+    try {
+      const { successRecord } = req.body
+      const username = req.user
+      console.log('req.user: ', req.user)
+      console.log('successRecord: ', successRecord)
+      console.log('username: ', username)
+      const isCreated = await this.profileService.addSuccessRecord(username, successRecord)
+      if (isCreated) res.status(201).json({ success: 'Success record created' })
+    } catch (error) {
+      next(error)
+    }
   }
 
   processPayment = async (req, res, next) => {

@@ -1,5 +1,15 @@
 const mongoose = require('mongoose')
 
+const successRecord = new mongoose.Schema(
+  {
+    successRecord: {
+      type: String,
+      required: true
+    }
+  },
+  { timestamps: true }
+)
+
 const coursesAnswersSchema = new mongoose.Schema({
   courseId: {
     type: String,
@@ -122,7 +132,11 @@ const userSchema = new mongoose.Schema({
     hobbies: {
       type: [String]
     },
-    coursesAnswers: [coursesAnswersSchema]
+    coursesAnswers: [coursesAnswersSchema],
+    successDiary: {
+      type: [successRecord],
+      default: []
+    }
   },
   gender: {
     type: String,

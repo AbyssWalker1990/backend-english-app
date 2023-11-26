@@ -242,6 +242,18 @@ class ProfileService {
     const withoutEmpty = dataArray.filter((el) => el.length > 0 && !/^ +$/.test(el))
     return withoutEmpty
   }
+
+  addSuccessRecord = async (username, successRecord) => {
+    const user = await User.findOneAndUpdate({ username })
+
+    console.log('user: ', user)
+    const successRecordData = {
+      successRecord
+    }
+    user.profile.successDiary.push(successRecordData)
+    await user.save()
+    return user
+  }
 }
 
 module.exports = ProfileService
