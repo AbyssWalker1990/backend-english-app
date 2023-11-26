@@ -29,9 +29,6 @@ class ProfileController {
     try {
       const { successRecord } = req.body
       const username = req.user
-      console.log('req.user: ', req.user)
-      console.log('successRecord: ', successRecord)
-      console.log('username: ', username)
       const isCreated = await this.profileService.addSuccessRecord(username, successRecord)
       if (isCreated) res.status(201).json({ success: 'Success record created' })
     } catch (error) {
@@ -80,9 +77,12 @@ class ProfileController {
 
   getProfile = async (req, res) => {
     const currentUser = await User.findOne({ username: req.user })
-    const { photo, objectives, priorities, hobbies, courses, activeCourse, coursesAnswers } = currentUser.profile
+    const { photo, objectives, priorities, hobbies, courses, activeCourse, coursesAnswers, successDiary } =
+      currentUser.profile
     const { gender } = currentUser
-    res.status(200).json({ photo, objectives, priorities, hobbies, courses, activeCourse, coursesAnswers, gender })
+    res
+      .status(200)
+      .json({ photo, objectives, priorities, hobbies, courses, activeCourse, coursesAnswers, gender, successDiary })
   }
 
   setAnswers = async (req, res, next) => {

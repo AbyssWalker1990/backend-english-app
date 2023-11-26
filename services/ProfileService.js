@@ -245,8 +245,6 @@ class ProfileService {
 
   addSuccessRecord = async (username, successRecord) => {
     const user = await User.findOneAndUpdate({ username })
-
-    console.log('user: ', user)
     const successRecordData = {
       successRecord
     }
