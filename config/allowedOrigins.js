@@ -4,6 +4,8 @@ const allowedOrigins = [
   'https://bright-bunny-20b68d.netlify.app',
   'https://main--bright-bunny-20b68d.netlify.app/',
   'https://e-w-s.netlify.app',
+  'https://english-with-success.com',
+  'https://www.english-with-success.com',
   '*.netlify.app',
   'https://www.portmone.com.ua'
 ]
