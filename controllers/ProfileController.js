@@ -14,7 +14,7 @@ class ProfileController {
   }
 
   initRoutes() {
-    this.router.get('/success_payment', (req, res) => res.redirect('https://e-w-s.netlify.app/success_payment'))
+    this.router.get('/success_payment', (req, res) => res.redirect('https://english-with-success.com/success_payment'))
     this.router.post('/success_payment', this.processPayment)
     this.router.post(`${this.path}/set-avatar`, verifyJWT, upload.single('imageInput'), this.setAvatar)
     this.router.post(`${this.path}`, verifyJWT, this.setProfileDescription)
