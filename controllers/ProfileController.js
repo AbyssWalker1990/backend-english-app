@@ -48,7 +48,7 @@ class ProfileController {
     const currentUser = await User.findOne({ email })
     currentUser.profile.courses.push(course)
     await this.profileService.setProfileActiveCourse(course, currentUser.username)
-    res.redirect('https://e-w-s.netlify.app/success_payment')
+    res.redirect('https://english-with-success.com/success_payment')
   }
 
   setAvatar = async (req, res, next) => {
